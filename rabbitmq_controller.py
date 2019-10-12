@@ -24,7 +24,8 @@ direct_routing_key1 = "direct.pwl1"
 direct_routing_key2 = "direct.pwl2"
 
 verseset = readallverse()
-LTP_DATA_DIR = '/Users/zhangqian/PycharmProjects/pyltp/ltp_data_v3.4.0/'  # ltp模型目录的路径
+# LTP_DATA_DIR = '/Users/zhangqian/PycharmProjects/pyltp/ltp_data_v3.4.0/'  # ltp模型目录的路径
+LTP_DATA_DIR = '/develop/python3/PoetryQA/ltp_data_v3.4.0/'  # ltp模型目录的路径
 pos_model_path = os.path.join(LTP_DATA_DIR, 'pos.model')
 postagger = Postagger()  # 初始化实例
 postagger.load(pos_model_path)  # 加载模型

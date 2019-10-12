@@ -1,32 +1,33 @@
 # -*- coding:utf-8 -*-
 import os
 import jieba.posseg as pseg
-from py2neo import Graph
-from pyltp import Postagger
-from pyltp import Parser
-from nermain import NER
-import jieba.posseg as pseg
 import jieba
 from readDict import readPropertyWord
 from readDict import readQuestionWord
+import rabbitmq_controller
 
-jieba.load_userdict('qadata/userdict.txt')
+jieba.load_userdict('/develop/python3/PoetryQA/PoetryQA/qadata/userdict.txt')
+# jieba.load_userdict('qadata/userdict.txt')
 
 from py2neo import Graph, Node, Relationship
 from pyltp import Postagger
 from pyltp import Parser
-LTP_DATA_DIR = '/Users/zhangqian/PycharmProjects/pyltp/ltp_data_v3.4.0/'  # ltp模型目录的路径
+
+# LTP_DATA_DIR = '/Users/zhangqian/PycharmProjects/pyltp/ltp_data_v3.4.0/'  # ltp模型目录的路径
+LTP_DATA_DIR = '/develop/python3/PoetryQA/ltp_data_v3.4.0/'  # ltp模型目录的路径
 pos_model_path = os.path.join(LTP_DATA_DIR, 'pos.model')
 postagger = Postagger()  # 初始化实例
 postagger.load(pos_model_path)  # 加载模型
 par_model_path = os.path.join(LTP_DATA_DIR, 'parser.model')
 parser = Parser()  # 初始化实例
 parser.load(par_model_path)  # 加载模型
-propertylist, propertydict = readPropertyWord()#读取关系词，并做成词典
-questionlist, questiondict = readQuestionWord()#读取问题词，并做成词典
-nertypelist=['VER','POT']
-def answerrecognition(sentence,entitylist,poslist,indexset):#命名实体识别、抽取句子中的关系词、问题词
-    indexlist = []#取出indexset中较小的值，组成indexlist
+propertylist, propertydict = readPropertyWord()  # 读取关系词，并做成词典
+questionlist, questiondict = readQuestionWord()  # 读取问题词，并做成词典
+nertypelist = ['VER', 'POT']
+
+
+def answerrecognition(sentence, entitylist, poslist, indexset):  # 命名实体识别、抽取句子中的关系词、问题词
+    indexlist = []  # 取出indexset中较小的值，组成indexlist
     for index in indexset:
         smallnum = 1000
         for i in index:
@@ -36,8 +37,8 @@ def answerrecognition(sentence,entitylist,poslist,indexset):#命名实体识别�
     allwordlist = entitylist
     allposlist = poslist
     allweilist = indexlist
-    resultwordlist=[]
-    resultposlist=[]
+    resultwordlist = []
+    resultposlist = []
     seg_list2 = pseg.cut(sentence)
     jiebawordlist = []
     jiebaposlist = []
@@ -69,8 +70,10 @@ def answerrecognition(sentence,entitylist,poslist,indexset):#命名实体识别�
             resultposlist.append("null")
             index = index + 1
 
-    return resultwordlist,resultposlist
-def findproperty(i, arcshead, arcsrela, resultposlist):#寻找属性词
+    return resultwordlist, resultposlist
+
+
+def findproperty(i, arcshead, arcsrela, resultposlist):  # 寻找属性词
     if resultposlist[i] != "property" and arcshead[i] - 1 >= 0:
         i = arcshead[i] - 1
         return findproperty(i, arcshead, arcsrela, resultposlist)
@@ -78,6 +81,8 @@ def findproperty(i, arcshead, arcsrela, resultposlist):#寻找属性词
         return -1
     else:
         return i
+
+
 # def findnerandproperty(i,arcshead,arcsrela,resultposlist,resultwordlist):
 #     headnodelist=[]
 #     headnodetypelist=[]
@@ -124,21 +129,19 @@ def findproperty(i, arcshead, arcsrela, resultposlist):#寻找属性词
 #                     judgeobject=1 #该标号为标志符，为1则
 
 
-
-
-    #         for j in range(0, len(arcshead)):
-    #             if j != i and arcshead[j] - 1 == hed and resultposlist[j] == "property":
-    #                 if arcsrela[j] == "SBV" or arcsrela[j] == "VOB":
-    #                     flag = True
-    #                     flagnum = j
-    #         if flag:
-    #             return flagnum
-    #         else:
-    #             return -1
-    #     else:
-    #         return -1
-    # else:
-    #     return -1
+#         for j in range(0, len(arcshead)):
+#             if j != i and arcshead[j] - 1 == hed and resultposlist[j] == "property":
+#                 if arcsrela[j] == "SBV" or arcsrela[j] == "VOB":
+#                     flag = True
+#                     flagnum = j
+#         if flag:
+#             return flagnum
+#         else:
+#             return -1
+#     else:
+#         return -1
+# else:
+#     return -1
 
 
 def findobject(i, arcshead, arcsrela, resultposlist):
@@ -149,7 +152,9 @@ def findobject(i, arcshead, arcsrela, resultposlist):
         return -1
     else:
         return i
-def answersemantic(resultwordlist,resultposlist):#根据ltp进行句法分析，转换为
+
+
+def answersemantic(resultwordlist, resultposlist):  # 根据ltp进行句法分析，转换为
     postags = postagger.postag(resultwordlist)  # 词性标注''
     poslist = []
     for i in postags:
@@ -190,18 +195,20 @@ def answersemantic(resultwordlist,resultposlist):#根据ltp进行句法分析，
                 endnodetype = getnodetype(propertydict[resultwordlist[num]], resultposlist[i], questr)
                 poedict["relation"] = properresult
                 poedict["endnode"] = ""
-                poedict["endnodetype"]=endnodetype
+                poedict["endnodetype"] = endnodetype
                 poedict["quesion"] = questr
                 poedictlist.append(poedict)
     print(poedictlist)
     return poedictlist
 
-def getrelation(property, nodetype, questiontype):#桥接操作
-    if (property=="verseNextTo" or property=="verseBeforeTo") and nodetype=="VER":
+
+def getrelation(property, nodetype, questiontype):  # 桥接操作
+    if (property == "verseNextTo" or property == "verseBeforeTo") and nodetype == "VER":
         return property
 
-def getnodetype(property,nodetype,questiontype):
-    nodetypeget=""
-    if (property=="verseNextTo" or property=="verseBeforeTo") and nodetype=="VER":
-        nodetypeget=nodetype
+
+def getnodetype(property, nodetype, questiontype):
+    nodetypeget = ""
+    if (property == "verseNextTo" or property == "verseBeforeTo") and nodetype == "VER":
+        nodetypeget = nodetype
         return nodetypeget
