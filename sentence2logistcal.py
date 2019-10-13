@@ -4,17 +4,12 @@ import jieba.posseg as pseg
 import jieba
 from readDict import readPropertyWord
 from readDict import readQuestionWord
-import rabbitmq_controller
 
-jieba.load_userdict('/develop/python3/PoetryQA/PoetryQA/qadata/userdict.txt')
-# jieba.load_userdict('qadata/userdict.txt')
-
-from py2neo import Graph, Node, Relationship
 from pyltp import Postagger
 from pyltp import Parser
+from const.controller import LTP_DATA_DIR
 
-# LTP_DATA_DIR = '/Users/zhangqian/PycharmProjects/pyltp/ltp_data_v3.4.0/'  # ltp模型目录的路径
-LTP_DATA_DIR = '/develop/python3/PoetryQA/ltp_data_v3.4.0/'  # ltp模型目录的路径
+jieba.load_userdict('./qadata/userdict.txt')
 pos_model_path = os.path.join(LTP_DATA_DIR, 'pos.model')
 postagger = Postagger()  # 初始化实例
 postagger.load(pos_model_path)  # 加载模型
