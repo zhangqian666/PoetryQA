@@ -6,7 +6,7 @@ from collections import OrderedDict
 
 import tensorflow as tf
 import numpy as np
-from demo import test,lookfordict,VER
+from demo import test, lookfordict, VER
 from model import Model
 from loader import load_sentences, update_tag_scheme
 from loader import char_mapping, tag_mapping
@@ -16,39 +16,38 @@ from utils import print_config, save_config, load_config, test_ner
 from data_utils import load_word2vec, create_input, input_from_line, BatchManager
 
 flags = tf.app.flags
-flags.DEFINE_boolean("clean",       True,      "clean train folder")
-flags.DEFINE_boolean("train",       True,      "Wither train the model")
+flags.DEFINE_boolean("clean", True, "clean train folder")
+flags.DEFINE_boolean("train", True, "Wither train the model")
 # configurations for the model
-flags.DEFINE_integer("seg_dim",     20,         "Embedding size for segmentation, 0 if not used")
-flags.DEFINE_integer("char_dim",    100,        "Embedding size for characters")
-flags.DEFINE_integer("lstm_dim",    100,        "Num of hidden units in LSTM")
-flags.DEFINE_string("tag_schema",   "iobes",    "tagging schema iobes or iob")
+flags.DEFINE_integer("seg_dim", 20, "Embedding size for segmentation, 0 if not used")
+flags.DEFINE_integer("char_dim", 100, "Embedding size for characters")
+flags.DEFINE_integer("lstm_dim", 100, "Num of hidden units in LSTM")
+flags.DEFINE_string("tag_schema", "iobes", "tagging schema iobes or iob")
 
 # configurations for training
-flags.DEFINE_float("clip",          5,          "Gradient clip")
-flags.DEFINE_float("dropout",       0.5,        "Dropout rate")
-flags.DEFINE_float("batch_size",    20,         "batch size")
-flags.DEFINE_float("lr",            0.001,      "Initial learning rate")
-flags.DEFINE_string("optimizer",    "adam",     "Optimizer for training")
-flags.DEFINE_boolean("pre_emb",     True,       "Wither use pre-trained embedding")
-flags.DEFINE_boolean("zeros",       False,      "Wither replace digits with zero")
-flags.DEFINE_boolean("lower",       True,       "Wither lower case")
+flags.DEFINE_float("clip", 5, "Gradient clip")
+flags.DEFINE_float("dropout", 0.5, "Dropout rate")
+flags.DEFINE_float("batch_size", 20, "batch size")
+flags.DEFINE_float("lr", 0.001, "Initial learning rate")
+flags.DEFINE_string("optimizer", "adam", "Optimizer for training")
+flags.DEFINE_boolean("pre_emb", True, "Wither use pre-trained embedding")
+flags.DEFINE_boolean("zeros", False, "Wither replace digits with zero")
+flags.DEFINE_boolean("lower", True, "Wither lower case")
 
-flags.DEFINE_integer("max_epoch",   100,        "maximum training epochs")
-flags.DEFINE_integer("steps_check", 100,        "steps per checkpoint")
-flags.DEFINE_string("ckpt_path",    "ckpt",      "Path to save model")
-flags.DEFINE_string("summary_path", "summary",      "Path to store summaries")
-flags.DEFINE_string("log_file",     "train.log",    "File for log")
-flags.DEFINE_string("map_file",     "maps.pkl",     "file for maps")
-flags.DEFINE_string("vocab_file",   "vocab.json",   "File for vocab")
-flags.DEFINE_string("config_file",  "config_file",  "File for config")
-flags.DEFINE_string("script",       "conlleval",    "evaluation script")
-flags.DEFINE_string("result_path",  "result",       "Path for results")
-flags.DEFINE_string("emb_file",     "wiki_100.utf8", "Path for pre_trained embedding")
-flags.DEFINE_string("train_file",   os.path.join("data", "example.train"),  "Path for train data")
-flags.DEFINE_string("dev_file",     os.path.join("data", "example.dev"),    "Path for dev data")
-flags.DEFINE_string("test_file",    os.path.join("data", "example.test"),   "Path for test data")
-
+flags.DEFINE_integer("max_epoch", 100, "maximum training epochs")
+flags.DEFINE_integer("steps_check", 100, "steps per checkpoint")
+flags.DEFINE_string("ckpt_path", "ckpt", "Path to save model")
+flags.DEFINE_string("summary_path", "summary", "Path to store summaries")
+flags.DEFINE_string("log_file", "train.log", "File for log")
+flags.DEFINE_string("map_file", "maps.pkl", "file for maps")
+flags.DEFINE_string("vocab_file", "vocab.json", "File for vocab")
+flags.DEFINE_string("config_file", "config_file", "File for config")
+flags.DEFINE_string("script", "conlleval", "evaluation script")
+flags.DEFINE_string("result_path", "result", "Path for results")
+flags.DEFINE_string("emb_file", "wiki_100.utf8", "Path for pre_trained embedding")
+flags.DEFINE_string("train_file", os.path.join("data", "example.train"), "Path for train data")
+flags.DEFINE_string("dev_file", os.path.join("data", "example.dev"), "Path for dev data")
+flags.DEFINE_string("test_file", os.path.join("data", "example.test"), "Path for test data")
 
 FLAGS = tf.app.flags.FLAGS
 assert FLAGS.clip < 5.1, "gradient clip should't be too much"
@@ -180,7 +179,7 @@ def train():
                     iteration = step // steps_per_epoch + 1
                     logger.info("iteration:{} step:{}/{}, "
                                 "NER loss:{:>9.6f}".format(
-                        iteration, step%steps_per_epoch, steps_per_epoch, np.mean(loss)))
+                        iteration, step % steps_per_epoch, steps_per_epoch, np.mean(loss)))
                     loss = []
 
             best = evaluate(sess, model, "dev", dev_manager, id_to_tag, logger)
@@ -188,29 +187,32 @@ def train():
                 save_model(sess, model, FLAGS.ckpt_path, logger)
             evaluate(sess, model, "test", test_manager, id_to_tag, logger)
 
+
 def rela(se):
-    friend=['朋友','友人','好友','挚友','恩人','朋侪','伙伴','同伙','伴侣','同伴','诤友','室友','老朋友','伙伴','密友','女朋友','死党','战友','同学','知己']
-    relative=['亲人','情人','家人','亲友','妻儿','亲戚','养父母','亲属','父母亲','家庭成员','亲生父母','妻女']
-    lover=['夫妇','鸳侣','妻子','配偶','伉俪','佳偶','鸳鸯','鹣鲽','比翼鸟','连理枝','知己','鱼水','龙凤']
-    student=['老师','学生','师父','师傅']
-    classmate=['学妹','同班同学','学弟','男同学','女同学','学长','室友','死党','同班']
+    friend = ['朋友', '友人', '好友', '挚友', '恩人', '朋侪', '伙伴', '同伙', '伴侣', '同伴', '诤友', '室友', '老朋友', '伙伴', '密友', '女朋友', '死党',
+              '战友', '同学', '知己']
+    relative = ['亲人', '情人', '家人', '亲友', '妻儿', '亲戚', '养父母', '亲属', '父母亲', '家庭成员', '亲生父母', '妻女']
+    lover = ['夫妇', '鸳侣', '妻子', '配偶', '伉俪', '佳偶', '鸳鸯', '鹣鲽', '比翼鸟', '连理枝', '知己', '鱼水', '龙凤']
+    student = ['老师', '学生', '师父', '师傅']
+    classmate = ['学妹', '同班同学', '学弟', '男同学', '女同学', '学长', '室友', '死党', '同班']
     for i in friend:
-        if se.find(i)!=-1:
+        if se.find(i) != -1:
             print('可能存在朋友关系')
     for i in relative:
-        if se.find(i)!=-1:
+        if se.find(i) != -1:
             print('可能存在亲人关系')
     for i in lover:
-        if se.find(i)!=-1:
+        if se.find(i) != -1:
             print('可能存在爱人关系')
     for i in student:
-        if se.find(i)!=-1:
+        if se.find(i) != -1:
             print('可能存在师生关系')
     for i in classmate:
-        if se.find(i)!=-1:
+        if se.find(i) != -1:
             print('可能存在同学关系')
-   
-def evaluate_line(sents):
+
+
+def build_model():
     config = load_config(FLAGS.config_file)
     logger = get_logger(FLAGS.log_file)
     # limit GPU memory
@@ -218,72 +220,100 @@ def evaluate_line(sents):
     tf_config.gpu_options.allow_growth = True
     with open(FLAGS.map_file, "rb") as f:
         char_to_id, id_to_char, tag_to_id, id_to_tag = pickle.load(f)
+
     with tf.Session(config=tf_config) as sess:
-        ner=[]
+        ner = []
+        print(" start  create model")
         model = create_model(sess, Model, FLAGS.ckpt_path, load_word2vec, config, id_to_char, logger)
-#        while True:
-            # try:
-            #     line = input("请输入测试句子:")
-            #     result = model.evaluate_line(sess, input_from_line(line, char_to_id), id_to_tag)
-            #     print(result)
-            # except Exception as e:
-            #     logger.info(e)
-                
-            #line = input("请输入测试句子:")
-        line=sents
-        rela(line)
-        ner=[]
-        ver=[]
-        
-        result = model.evaluate_line(sess, input_from_line(line, char_to_id), id_to_tag)           
+        print(" end  create model")
+    return model
+
+
+static_model = None
+
+
+def evaluate_line(sents):
+    global static_model
+    config = load_config(FLAGS.config_file)
+    logger = get_logger(FLAGS.log_file)
+    # limit GPU memory
+    graph = tf.Graph()
+    # tf_config = tf.ConfigProto()
+    # tf_config.gpu_options.allow_growth = True
+    with open(FLAGS.map_file, "rb") as f:
+        char_to_id, id_to_char, tag_to_id, id_to_tag = pickle.load(f)
+
+        # with tf.Session(config=tf_config) as sess:
+
+    sess = tf.InteractiveSession(graph=graph)
+
+    print(" start  create model")
+    static_model = create_model(sess, Model, FLAGS.ckpt_path, load_word2vec, config, id_to_char, logger)
+    print(" end  create model")
+
+    result = static_model.evaluate_line(sess, input_from_line(sents, char_to_id), id_to_tag)
+    sess.close()
+
     return result
 
-def NER(words):
-    entity_name,entity_type,entity_loaction = [],[],[]
-    entities_name,entities_type,entities_location = [],[],[]
-    result = evaluate_line(words)
-    for i in range(len(result['entities'])):
-                entity_name = result['entities'][i]['word']
-                entity_start_loction = result['entities'][i]['start']
-                entity_end_loction = result['entities'][i]['end']
-                entity_type = result['entities'][i]['type']
-                entities_name.append(entity_name)
-                entities_type.append(entity_type) 
-                entities_location.append({entity_start_loction,entity_end_loction}) 
-                a=''
-                t=0
-                if result['entities'][i]['type'] == 'VER':
-                    a = result['entities'][i]['word']
-                    t,eachline = VER(a)
-                    if t==1:
-                        result['entities'][i]['simlity']=['Find']
-                    if t==2:
-                        result['entities'][i]['simlity']=[eachline]
-                    if t==0:
-                        result['entities'][i]['simlity']=['Lost']
-    #                        print('VER entity:')
-    #                        print(ver)
-    
-                else:
-                    simility=[]
-                    a = result['entities'][i]['word']
-    #                        print('Normal entity:')
-    #                        print(ner)
-                    t=lookfordict(a)
-                    if t==1:
-                        result['entities'][i]['simlity']=['Find']
-                    if t==2:
-                        #print('Looking up Pinyin....'+a)
-                        word = a
-                        pyy,t = test(word)
-                        if t==3:
-                            #print('Lost')
-                            result['entities'][i]['simlity']=['Lost']
-                        elif t==4:
-                            simility.append(pyy)
-                            result['entities'][i]['simlity']=[simility]
-    return entities_name,entities_type,entities_location
 
+# tf_config = tf.ConfigProto()
+# tf_config.gpu_options.allow_growth = True
+# with open(FLAGS.map_file, "rb") as f:
+#     char_to_id, id_to_char, tag_to_id, id_to_tag = pickle.load(f)
+# with tf.Session(config=tf_config) as sess:
+#     line = sents
+#     rela(line)
+#     result = build_model().evaluate_line(sess, input_from_line(line, char_to_id), id_to_tag)
+# return result
+
+
+def NER(words):
+    entity_name, entity_type, entity_loaction = [], [], []
+    entities_name, entities_type, entities_location = [], [], []
+    result = evaluate_line(words)
+
+    for i in range(len(result['entities'])):
+        entity_name = result['entities'][i]['word']
+        entity_start_loction = result['entities'][i]['start']
+        entity_end_loction = result['entities'][i]['end']
+        entity_type = result['entities'][i]['type']
+        entities_name.append(entity_name)
+        entities_type.append(entity_type)
+        entities_location.append({entity_start_loction, entity_end_loction})
+        a = ''
+        t = 0
+        if result['entities'][i]['type'] == 'VER':
+            a = result['entities'][i]['word']
+            t, eachline = VER(a)
+            if t == 1:
+                result['entities'][i]['simlity'] = ['Find']
+            if t == 2:
+                result['entities'][i]['simlity'] = [eachline]
+            if t == 0:
+                result['entities'][i]['simlity'] = ['Lost']
+        #                        print('VER entity:')
+        #                        print(ver)
+
+        else:
+            simility = []
+            a = result['entities'][i]['word']
+            #                        print('Normal entity:')
+            #                        print(ner)
+            t = lookfordict(a)
+            if t == 1:
+                result['entities'][i]['simlity'] = ['Find']
+            if t == 2:
+                # print('Looking up Pinyin....'+a)
+                word = a
+                pyy, t = test(word)
+                if t == 3:
+                    # print('Lost')
+                    result['entities'][i]['simlity'] = ['Lost']
+                elif t == 4:
+                    simility.append(pyy)
+                    result['entities'][i]['simlity'] = [simility]
+    return entities_name, entities_type, entities_location
 
 #                ###Database Linking
 #                print('>>>>>>>Search the basic database>>>>>>>>>')
@@ -310,12 +340,11 @@ def NER(words):
 #                            
 #                ###For VER entity
 #                for o in range(len(ver)):
-                    
+
 #                print(result)
-                
-                    
-                           
-#def main(_):
+
+
+# def main(_):
 #
 #    if FLAGS.train:
 #        if FLAGS.clean:
@@ -324,9 +353,5 @@ def NER(words):
 #    else:
 #         print(evaluate_line())
 
-#if __name__ == "__main__":
+# if __name__ == "__main__":
 #    tf.app.run(main)
-
-
-
-

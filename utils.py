@@ -11,20 +11,22 @@ eval_path = "./evaluation"
 eval_temp = os.path.join(eval_path, "temp")
 eval_script = os.path.join(eval_path, "conlleval")
 
+LOG_ROOT = "I:/"
 
-def get_logger(log_file):
-    logger = logging.getLogger(log_file)
-    logger.setLevel(logging.DEBUG)
-    fh = logging.FileHandler(log_file)
-    fh.setLevel(logging.DEBUG)
-    ch = logging.StreamHandler()
-    ch.setLevel(logging.INFO)
-    formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
-    ch.setFormatter(formatter)
-    fh.setFormatter(formatter)
-    logger.addHandler(ch)
-    logger.addHandler(fh)
-    return logger
+
+def get_logger(log_filename, level=logging.DEBUG, when='midnight', back_count=0):
+    logging.basicConfig(level=logging.DEBUG,
+                        format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
+                        datefmt='%a, %d %b %Y %H:%M:%S',
+                        filename='myapp.log',
+                        filemode='w')
+    console = logging.StreamHandler()
+    console.setLevel(logging.INFO)
+    formatter = logging.Formatter('%(name)-12s: %(levelname)-8s %(message)s')
+    console.setFormatter(formatter)
+    logging.getLogger('').addHandler(console)
+
+    return logging
 
 
 # def test_ner(results, path):
@@ -170,17 +172,16 @@ def save_model(sess, model, path, logger):
 def create_model(session, Model_class, path, load_vec, config, id_to_char, logger):
     # create model, reuse parameters if exists
     model = Model_class(config)
-
     ckpt = tf.train.get_checkpoint_state(path)
     if ckpt and tf.train.checkpoint_exists(ckpt.model_checkpoint_path):
-        logger.info("Reading model parameters from %s" % ckpt.model_checkpoint_path)
+        logger.info("Reading model parameters from {}".format(ckpt.model_checkpoint_path))
         model.saver.restore(session, ckpt.model_checkpoint_path)
     else:
         logger.info("Created model with fresh parameters.")
         session.run(tf.global_variables_initializer())
         if config["pre_emb"]:
             emb_weights = session.run(model.char_lookup.read_value())
-            emb_weights = load_vec(config["emb_file"],id_to_char, config["char_dim"], emb_weights)
+            emb_weights = load_vec(config["emb_file"], id_to_char, config["char_dim"], emb_weights)
             session.run(model.char_lookup.assign(emb_weights))
             logger.info("Load pre-trained embedding.")
     return model
@@ -193,7 +194,7 @@ def result_to_json(string, tags):
     idx = 0
     for char, tag in zip(string, tags):
         if tag[0] == "S":
-            item["entities"].append({"word": char, "start": idx, "end": idx+1, "type":tag[2:]})
+            item["entities"].append({"word": char, "start": idx, "end": idx + 1, "type": tag[2:]})
         elif tag[0] == "B":
             entity_name += char
             entity_start = idx
@@ -208,7 +209,3 @@ def result_to_json(string, tags):
             entity_start = idx
         idx += 1
     return item
-
-
-
-

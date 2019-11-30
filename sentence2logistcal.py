@@ -5,17 +5,11 @@ import jieba
 from readDict import readPropertyWord
 from readDict import readQuestionWord
 
-from pyltp import Postagger
-from pyltp import Parser
+from pyltp import Postagger, Parser
+
 from const.controller import LTP_DATA_DIR
 
 jieba.load_userdict('./qadata/userdict.txt')
-pos_model_path = os.path.join(LTP_DATA_DIR, 'pos.model')
-postagger = Postagger()  # 初始化实例
-postagger.load(pos_model_path)  # 加载模型
-par_model_path = os.path.join(LTP_DATA_DIR, 'parser.model')
-parser = Parser()  # 初始化实例
-parser.load(par_model_path)  # 加载模型
 propertylist, propertydict = readPropertyWord()  # 读取关系词，并做成词典
 questionlist, questiondict = readQuestionWord()  # 读取问题词，并做成词典
 nertypelist = ['VER', 'POT']
@@ -78,67 +72,6 @@ def findproperty(i, arcshead, arcsrela, resultposlist):  # 寻找属性词
         return i
 
 
-# def findnerandproperty(i,arcshead,arcsrela,resultposlist,resultwordlist):
-#     headnodelist=[]
-#     headnodetypelist=[]
-#     propertylist=[]
-#     questionlist=[]
-#     for k in range(0, len(arcshead)):
-#         if arcshead[k] - 1 == i and arcsrela[k] == "ATT":
-#             if resultposlist[k] in nertypelist:
-#                 headnodelist.append(resultwordlist[k])
-#                 headnodetypelist.append(resultwordlist[k])
-#                 propertylist.append(resultwordlist[i])
-#             elif resultposlist[k] == "property":
-#                 headlist,headtypelist,prolist,quelist=findnerandproperty(k,arcshead,arcsrela,resultposlist,resultwordlist)
-#                 headnodelist=headlist+headnodelist
-#                 headnodetypelist=headtypelist+headnodetypelist
-#                 propertylist=prolist+propertylist
-#                 questionlist=quelist+questionlist
-#             elif resultposlist[k]=="question":
-#                 questionlist.append(resultwordlist[k])
-#     return headnodelist,headnodetypelist,propertylist,questionlist
-#
-# def findsentencestructure(arcshead,arcsrela,resultposlist,resultwordlist):
-#     for k in range(0, len(arcsrela)):
-#         if arcsrela[k] == "HED":
-#             hed = k
-#     headnodelist=[]
-#     headnodetypelist=[]
-#     propertylist=[]
-#     endnodelist=[]
-#     endnodetypelist=[]
-#     questionlist=[]
-#     judgeobject=0
-#     for i in range(0,len(arcsrela)):
-#         if arcshead[i] - 1 == hed:
-#             if arcsrela[i] == "SBV":#判断成分缺失和多跳
-#                 if resultposlist[i] =="property":
-#                     headnodelist,headnodetypelist,propertylist,questionlist=findnerandproperty(i,arcshead,arcsrela,resultposlist,resultwordlist)
-#                 elif resultposlist[i] in nertypelist:
-#                     headnodelist.append(resultwordlist[i])
-#                     headnodetypelist.append(resultposlist[i])
-#                 elif resultposlist[i]=="question":
-#                     questionlist.append(resultwordlist[i])
-#                 if len(questionlist)>0:
-#                     judgeobject=1 #该标号为标志符，为1则
-
-
-#         for j in range(0, len(arcshead)):
-#             if j != i and arcshead[j] - 1 == hed and resultposlist[j] == "property":
-#                 if arcsrela[j] == "SBV" or arcsrela[j] == "VOB":
-#                     flag = True
-#                     flagnum = j
-#         if flag:
-#             return flagnum
-#         else:
-#             return -1
-#     else:
-#         return -1
-# else:
-#     return -1
-
-
 def findobject(i, arcshead, arcsrela, resultposlist):
     if resultposlist[i] not in nertypelist and arcshead[i] - 1 >= 0:
         i = arcshead[i] - 1
@@ -150,15 +83,25 @@ def findobject(i, arcshead, arcsrela, resultposlist):
 
 
 def answersemantic(resultwordlist, resultposlist):  # 根据ltp进行句法分析，转换为
+
+    postagger = Postagger()  # 初始化实例
+    pos_model_path = os.path.join(LTP_DATA_DIR, 'pos.model')
+    postagger.load(pos_model_path)  # 加载模型
+
+    parser = Parser()  # 初始化实例
+    par_model_path = os.path.join(LTP_DATA_DIR, 'parser.model')
+    parser.load(par_model_path)  # 加载模型
+
     postags = postagger.postag(resultwordlist)  # 词性标注''
     poslist = []
     for i in postags:
         poslist.append(str(i))
     print(poslist)
-    # postagger.release()  # 释放模型
+
     arcs = parser.parse(resultwordlist, poslist)
+
     print("\t".join("%d:%s" % (arc.head, arc.relation) for arc in arcs))
-    # parser.release()  # 释放模型
+
     arcshead = []
     arcsrela = []
     for i in arcs:
@@ -173,6 +116,7 @@ def answersemantic(resultwordlist, resultposlist):  # 根据ltp进行句法分�
     for i in range(0, len(resultposlist)):
         if resultposlist[i] == "question":
             quenum = i
+    print("resultposlist,resultwordlist:    ", resultwordlist, resultposlist)
     for i in range(0, length):
         if resultposlist[i] in nertypelist:
             num = findproperty(i, arcshead, arcsrela, resultposlist)
@@ -194,6 +138,9 @@ def answersemantic(resultwordlist, resultposlist):  # 根据ltp进行句法分�
                 poedict["quesion"] = questr
                 poedictlist.append(poedict)
     print(poedictlist)
+
+    postagger.release()  # 释放模型
+    parser.release()  # 释放模型
     return poedictlist
 
 
