@@ -1,0 +1,501 @@
+/develop/python3/python3/QA/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:516: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint8 = np.dtype([("qint8", np.int8, 1)])
+/develop/python3/python3/QA/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:517: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint8 = np.dtype([("quint8", np.uint8, 1)])
+/develop/python3/python3/QA/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:518: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint16 = np.dtype([("qint16", np.int16, 1)])
+/develop/python3/python3/QA/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:519: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint16 = np.dtype([("quint16", np.uint16, 1)])
+/develop/python3/python3/QA/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:520: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint32 = np.dtype([("qint32", np.int32, 1)])
+/develop/python3/python3/QA/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:525: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  np_resource = np.dtype([("resource", np.ubyte, 1)])
+/develop/python3/python3/QA/lib/python3.7/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:541: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint8 = np.dtype([("qint8", np.int8, 1)])
+/develop/python3/python3/QA/lib/python3.7/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:542: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint8 = np.dtype([("quint8", np.uint8, 1)])
+/develop/python3/python3/QA/lib/python3.7/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:543: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint16 = np.dtype([("qint16", np.int16, 1)])
+/develop/python3/python3/QA/lib/python3.7/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:544: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint16 = np.dtype([("quint16", np.uint16, 1)])
+/develop/python3/python3/QA/lib/python3.7/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:545: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint32 = np.dtype([("qint32", np.int32, 1)])
+/develop/python3/python3/QA/lib/python3.7/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:550: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  np_resource = np.dtype([("resource", np.ubyte, 1)])
+Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+Loading model cost 0.651 seconds.
+Prefix dict has been built succesfully.
+{'指的是': 'Typemeaning', '说的是': 'Typemeaning', '是什么意思': 'Typemeaning', '是指': 'Typemeaning', '指什么': 'Typemeaning', '意思是': 'Typemeaning', '什么人': 'Typepername', '谁': 'Typepername', '哪个人': 'Typepername', '什么名': 'Typepername', '什么名字': 'Typepername', '哪一位': 'Typepername', '哪位名人': 'Typepername', '哪位': 'Typepername', '何人': 'Typepername', '哪位诗人': 'Typepername', '哪位历史人物': 'Typepername', '哪位将领': 'Typepername', '哪个地方': 'TypeLocation', '哪个名胜': 'TypeLocation', '什么地方': 'TypeLocation', '哪儿': 'TypeLocation', '哪的': 'TypeLocation', '哪里去': 'TypeLocation', '哪处名胜': 'TypeLocation', '哪个朝代': 'TypeDynasty', '什么朝代': 'TypeDynasty', '什么历史时期': 'TypeDynasty', '哪个历史时期': 'TypeDynasty', '什么体裁': 'TypeClass', '那种': 'TypeClass', '哪种': 'TypeClass', '什么类型': 'TypeClass', '哪种类型': 'TypeClass', '哪一种': 'TypeClass', '哪一句': 'TypeSentence', '那句': 'TypeSentence', '哪句': 'TypeSentence', '哪句诗': 'TypeSentence', '哪一句诗词': 'TypeSentence', '哪两句诗词': 'TypeSentence', '哪些诗词': 'TypeSentence', '名句': 'TypeSentence', '诗句是': 'TypeSentence', '哪联诗': 'TypeSentence', '什么诗句': 'TypeSentence', '什么句子': 'TypeSentence', '哪首诗': 'TypePoname', '那首诗': 'TypePoname', '哪首唐诗': 'TypePoname', '哪篇名著': 'TypePoname', '诗名是什么': 'TypePoname', '什么诗': 'TypePoname', '是什么名字': 'TypePoname', '什么内容': 'TypeContent', '讲的什么': 'TypeContent', '描绘了什么': 'TypeContent', '形容什么': 'TypeContent', '描述了什么': 'TypeContent', '说的是什么': 'TypeContent', '什么关系': 'TypeRelation', '什么': 'TypeAll', '啥': 'TypeAll'}
+queue1 keu : direct.pwl1收到消息:b'{"userName":"123","question":"\xe8\xaf\xb7\xe4\xbb\x8e\xe4\xbb\xa5\xe4\xb8\x8b\xe5\x8d\x81\xe4\xba\x8c\xe4\xb8\xaa\xe5\xad\x97\xe4\xb8\xad\xe8\xaf\x86\xe5\x88\xab\xe4\xb8\x80\xe5\x8f\xa5\xe4\xb8\x83\xe8\xa8\x80\xe5\x94\x90\xe8\xaf\x97\xef\xbc\x9a\xe2\x80\x9c\xe8\xa7\x81\xef\xbc\x8c\xe9\x95\xbf\xef\xbc\x8c\xe5\xae\x89\xef\xbc\x8c\xe6\x84\x81\xef\xbc\x8c\xe7\x83\x9f\xef\xbc\x8c\xe4\xbd\xbf\xef\xbc\x8c\xe6\xb3\xa2\xef\xbc\x8c\xe4\xba\xba\xef\xbc\x8c\xe4\xb8\x8a \xef\xbc\x8c\xe6\x9c\xaa\xef\xbc\x8c\xe6\xb1\x9f\xef\xbc\x8c\xe6\x98\xaf\xe2\x80\x9d"}'
+转码过后:请从以下十二个字中识别一句七言唐诗：“见，长，安，愁，烟，使，波，人，上 ，未，江，是”
+begin
+烟波江上使人愁
+1.441561
+处理完 得到的结果为：烟波江上使人愁
+queue1 keu : direct.pwl1收到消息:b'{"userName":"123","question":"nohup: appending output to \xe2\x80\x98nohup.out\xe2\x80\x99"}'
+转码过后:nohup: appending output to ‘nohup.out’
+处理完 得到的结果为：无法识别，请重新输入
+Traceback (most recent call last):
+  File "/develop/python3/PoetryQA/PoetryQA/rabbit_controller.py", line 145, in <module>
+    channel.start_consuming()
+  File "/develop/python3/python3/QA/lib/python3.7/site-packages/pika/adapters/blocking_connection.py", line 1866, in start_consuming
+    self._process_data_events(time_limit=None)
+  File "/develop/python3/python3/QA/lib/python3.7/site-packages/pika/adapters/blocking_connection.py", line 2027, in _process_data_events
+    self.connection.process_data_events(time_limit=time_limit)
+  File "/develop/python3/python3/QA/lib/python3.7/site-packages/pika/adapters/blocking_connection.py", line 825, in process_data_events
+    self._flush_output(common_terminator)
+  File "/develop/python3/python3/QA/lib/python3.7/site-packages/pika/adapters/blocking_connection.py", line 522, in _flush_output
+    raise self._closed_result.value.error
+pika.exceptions.ConnectionClosedByBroker: (320, "CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'")
+/develop/python3/python3/QA/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:516: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint8 = np.dtype([("qint8", np.int8, 1)])
+/develop/python3/python3/QA/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:517: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint8 = np.dtype([("quint8", np.uint8, 1)])
+/develop/python3/python3/QA/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:518: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint16 = np.dtype([("qint16", np.int16, 1)])
+/develop/python3/python3/QA/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:519: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint16 = np.dtype([("quint16", np.uint16, 1)])
+/develop/python3/python3/QA/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:520: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint32 = np.dtype([("qint32", np.int32, 1)])
+/develop/python3/python3/QA/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:525: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  np_resource = np.dtype([("resource", np.ubyte, 1)])
+/develop/python3/python3/QA/lib/python3.7/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:541: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint8 = np.dtype([("qint8", np.int8, 1)])
+/develop/python3/python3/QA/lib/python3.7/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:542: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint8 = np.dtype([("quint8", np.uint8, 1)])
+/develop/python3/python3/QA/lib/python3.7/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:543: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint16 = np.dtype([("qint16", np.int16, 1)])
+/develop/python3/python3/QA/lib/python3.7/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:544: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint16 = np.dtype([("quint16", np.uint16, 1)])
+/develop/python3/python3/QA/lib/python3.7/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:545: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint32 = np.dtype([("qint32", np.int32, 1)])
+/develop/python3/python3/QA/lib/python3.7/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:550: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  np_resource = np.dtype([("resource", np.ubyte, 1)])
+Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+Loading model cost 0.649 seconds.
+Prefix dict has been built succesfully.
+WARNING:tensorflow:From /develop/python3/PoetryQA/PoetryQA/nermain.py:217: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+WARNING:tensorflow:From /develop/python3/PoetryQA/PoetryQA/nermain.py:221: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
+
+2019-10-13 10:26:26.780565: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2019-10-13 10:26:26.793800: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2459325000 Hz
+2019-10-13 10:26:26.796451: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x10fc7df0 executing computations on platform Host. Devices:
+2019-10-13 10:26:26.796502: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): <undefined>, <undefined>
+WARNING:tensorflow:From /develop/python3/PoetryQA/PoetryQA/model.py:33: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+WARNING:tensorflow:From /develop/python3/PoetryQA/PoetryQA/model.py:96: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+
+WARNING:tensorflow:From /develop/python3/PoetryQA/PoetryQA/model.py:97: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+
+WARNING:tensorflow:From /develop/python3/PoetryQA/PoetryQA/model.py:57: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+WARNING:tensorflow:From /develop/python3/PoetryQA/PoetryQA/model.py:131: bidirectional_dynamic_rnn (from tensorflow.python.ops.rnn) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `keras.layers.Bidirectional(keras.layers.RNN(cell))`, which is equivalent to this API
+WARNING:tensorflow:From /develop/python3/python3/QA/lib/python3.7/site-packages/tensorflow/python/ops/rnn.py:464: dynamic_rnn (from tensorflow.python.ops.rnn) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `keras.layers.RNN(cell)`, which is equivalent to this API
+WARNING:tensorflow:Entity <bound method CoupledInputForgetGateLSTMCell.call of <rnncell.CoupledInputForgetGateLSTMCell object at 0x7fe95752e2d0>> could not be transformed and will be executed as-is. Please report this to the AutgoGraph team. When filing the bug, set the verbosity to 10 (on Linux, `export AUTOGRAPH_VERBOSITY=10`) and attach the full output. Cause: converting <bound method CoupledInputForgetGateLSTMCell.call of <rnncell.CoupledInputForgetGateLSTMCell object at 0x7fe95752e2d0>>: AttributeError: module 'gast' has no attribute 'Num'
+WARNING:tensorflow:From /develop/python3/python3/QA/lib/python3.7/site-packages/tensorflow/python/ops/init_ops.py:1251: calling VarianceScaling.__init__ (from tensorflow.python.ops.init_ops) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Call initializer instance with the dtype argument instead of passing it to the constructor
+WARNING:tensorflow:From /develop/python3/python3/QA/lib/python3.7/site-packages/tensorflow/python/ops/rnn.py:244: add_dispatch_support.<locals>.wrapper (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+WARNING:tensorflow:Entity <bound method CoupledInputForgetGateLSTMCell.call of <rnncell.CoupledInputForgetGateLSTMCell object at 0x7fe9574af210>> could not be transformed and will be executed as-is. Please report this to the AutgoGraph team. When filing the bug, set the verbosity to 10 (on Linux, `export AUTOGRAPH_VERBOSITY=10`) and attach the full output. Cause: converting <bound method CoupledInputForgetGateLSTMCell.call of <rnncell.CoupledInputForgetGateLSTMCell object at 0x7fe9574af210>>: AttributeError: module 'gast' has no attribute 'Num'
+WARNING:tensorflow:From /develop/python3/PoetryQA/PoetryQA/model.py:148: The name tf.nn.xw_plus_b is deprecated. Please use tf.compat.v1.nn.xw_plus_b instead.
+
+WARNING:tensorflow:From /develop/python3/PoetryQA/PoetryQA/model.py:73: The name tf.train.AdamOptimizer is deprecated. Please use tf.compat.v1.train.AdamOptimizer instead.
+
+WARNING:tensorflow:From /develop/python3/PoetryQA/PoetryQA/model.py:86: The name tf.train.Saver is deprecated. Please use tf.compat.v1.train.Saver instead.
+
+WARNING:tensorflow:From /develop/python3/PoetryQA/PoetryQA/utils.py:175: checkpoint_exists (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to check for files with this prefix.
+2019-10-13 10:26:29,756 - train.log - INFO - Reading model parameters from ckpt/ner.ckpt
+2019-10-13 10:26:29.986639: W tensorflow/compiler/jit/mark_for_compilation_pass.cc:1412] (One-time warning): Not using XLA:CPU for cluster because envvar TF_XLA_FLAGS=--tf_xla_cpu_global_jit was not set.  If you want XLA:CPU, either set that envvar, or use experimental_jit_scope to enable XLA:CPU.  To confirm that XLA is active, pass --vmodule=xla_compilation_cache=1 (as a proper command-line flag, not via TF_XLA_FLAGS) or set the envvar XLA_FLAGS=--xla_hlo_profile.
+{'指的是': 'Typemeaning', '说的是': 'Typemeaning', '是什么意思': 'Typemeaning', '是指': 'Typemeaning', '指什么': 'Typemeaning', '意思是': 'Typemeaning', '什么人': 'Typepername', '谁': 'Typepername', '哪个人': 'Typepername', '什么名': 'Typepername', '什么名字': 'Typepername', '哪一位': 'Typepername', '哪位名人': 'Typepername', '哪位': 'Typepername', '何人': 'Typepername', '哪位诗人': 'Typepername', '哪位历史人物': 'Typepername', '哪位将领': 'Typepername', '哪个地方': 'TypeLocation', '哪个名胜': 'TypeLocation', '什么地方': 'TypeLocation', '哪儿': 'TypeLocation', '哪的': 'TypeLocation', '哪里去': 'TypeLocation', '哪处名胜': 'TypeLocation', '哪个朝代': 'TypeDynasty', '什么朝代': 'TypeDynasty', '什么历史时期': 'TypeDynasty', '哪个历史时期': 'TypeDynasty', '什么体裁': 'TypeClass', '那种': 'TypeClass', '哪种': 'TypeClass', '什么类型': 'TypeClass', '哪种类型': 'TypeClass', '哪一种': 'TypeClass', '哪一句': 'TypeSentence', '那句': 'TypeSentence', '哪句': 'TypeSentence', '哪句诗': 'TypeSentence', '哪一句诗词': 'TypeSentence', '哪两句诗词': 'TypeSentence', '哪些诗词': 'TypeSentence', '名句': 'TypeSentence', '诗句是': 'TypeSentence', '哪联诗': 'TypeSentence', '什么诗句': 'TypeSentence', '什么句子': 'TypeSentence', '哪首诗': 'TypePoname', '那首诗': 'TypePoname', '哪首唐诗': 'TypePoname', '哪篇名著': 'TypePoname', '诗名是什么': 'TypePoname', '什么诗': 'TypePoname', '是什么名字': 'TypePoname', '什么内容': 'TypeContent', '讲的什么': 'TypeContent', '描绘了什么': 'TypeContent', '形容什么': 'TypeContent', '描述了什么': 'TypeContent', '说的是什么': 'TypeContent', '什么关系': 'TypeRelation', '什么': 'TypeAll', '啥': 'TypeAll'}
+queue1 keu : direct.pwl1收到消息:b'{"userName":"123","question":"123"}'
+转码过后:123
+处理完 得到的结果为：无法识别，请重新输入
+queue1 keu : direct.pwl1收到消息:b'{"userName":"123","question":"1232131"}'
+转码过后:1232131
+处理完 得到的结果为：无法识别，请重新输入
+queue1 keu : direct.pwl1收到消息:b'{"userName":"123","question":"123"}'
+转码过后:123
+处理完 得到的结果为：无法识别，请重新输入
+queue1 keu : direct.pwl1收到消息:b'{"userName":"123","question":"1232"}'
+转码过后:1232
+处理完 得到的结果为：无法识别，请重新输入
+queue1 keu : direct.pwl1收到消息:b'{"userName":"123","question":"123"}'
+转码过后:123
+处理完 得到的结果为：无法识别，请重新输入
+queue1 keu : direct.pwl1收到消息:b'{"userName":"123","question":"123"}'
+转码过后:123
+处理完 得到的结果为：无法识别，请重新输入
+queue1 keu : direct.pwl1收到消息:b'{"userName":"123","question":"\xe8\xaf\xb7\xe4\xbb\x8e\xe4\xbb\xa5\xe4\xb8\x8b\xe5\x8d\x81\xe4\xba\x8c\xe4\xb8\xaa\xe5\xad\x97\xe4\xb8\xad\xe8\xaf\x86\xe5\x88\xab\xe4\xb8\x80\xe5\x8f\xa5\xe4\xb8\x83\xe8\xa8\x80\xe5\x94\x90\xe8\xaf\x97\xef\xbc\x9a\xe2\x80\x9c\xe8\xa7\x81\xef\xbc\x8c\xe9\x95\xbf\xef\xbc\x8c\xe5\xae\x89\xef\xbc\x8c\xe6\x84\x81\xef\xbc\x8c\xe7\x83\x9f\xef\xbc\x8c\xe4\xbd\xbf\xef\xbc\x8c\xe6\xb3\xa2\xef\xbc\x8c\xe4\xba\xba\xef\xbc\x8c\xe4\xb8\x8a \xef\xbc\x8c\xe6\x9c\xaa\xef\xbc\x8c\xe6\xb1\x9f\xef\xbc\x8c\xe6\x98\xaf\xe2\x80\x9d"}'
+转码过后:请从以下十二个字中识别一句七言唐诗：“见，长，安，愁，烟，使，波，人，上 ，未，江，是”
+begin
+烟波江上使人愁
+1.5412979999999994
+处理完 得到的结果为：烟波江上使人愁
+queue1 keu : direct.pwl1收到消息:b'{"userName":"123","question":"\xe8\xaf\xb7\xe9\x97\xae\xe2\x80\x9c\xe7\xa9\xb7\xe5\xb9\xb4\xe5\xbf\xa7\xe7\x8a\x81\xe5\x85\x83\xef\xbc\x8c\xe5\x8f\xb9\xe6\x81\xaf\xe8\x82\xa0\xe5\x86\x85\xe7\x83\xad\xe2\x80\x9d\xe4\xb8\xad\xe5\x93\xaa\xe4\xb8\xaa\xe5\xad\x97\xe6\x98\xaf\xe9\x94\x99\xe8\xaf\xaf\xe7\x9a\x84\xef\xbc\x9f"}'
+转码过后:请问“穷年忧犁元，叹息肠内热”中哪个字是错误的？
+处理完 得到的结果为：“犁”应改为“黎”
+queue1 keu : direct.pwl1收到消息:b'{"userName":"123","question":"\xe8\xaf\xb7\xe9\x97\xae\xe2\x80\x9c\xe7\xa9\xb7\xe5\xb9\xb4\xe5\xbf\xa7\xe7\x8a\x81\xe5\x85\x83\xef\xbc\x8c\xe5\x8f\xb9\xe6\x81\xaf\xe8\x82\xa0\xe5\x86\x85\xe7\x83\xad\xe2\x80\x9d\xe4\xb8\xad\xe5\x93\xaa\xe4\xb8\xaa\xe5\xad\x97\xe6\x98\xaf\xe9\x94\x99\xe8\xaf\xaf\xe7\x9a\x84\xef\xbc\x9f"}'
+转码过后:请问“穷年忧犁元，叹息肠内热”中哪个字是错误的？
+处理完 得到的结果为：解析错字问题出现错误
+queue1 keu : direct.pwl1收到消息:b'{"userName":"123","question":"\xe8\xaf\xb7\xe4\xbb\x8e\xe4\xbb\xa5\xe4\xb8\x8b\xe5\x8d\x81\xe4\xba\x8c\xe4\xb8\xaa\xe5\xad\x97\xe4\xb8\xad\xe8\xaf\x86\xe5\x88\xab\xe4\xb8\x80\xe5\x8f\xa5\xe4\xb8\x83\xe8\xa8\x80\xe5\x94\x90\xe8\xaf\x97\xef\xbc\x9a\xe2\x80\x9c\xe8\xa7\x81\xef\xbc\x8c\xe9\x95\xbf\xef\xbc\x8c\xe5\xae\x89\xef\xbc\x8c\xe6\x84\x81\xef\xbc\x8c\xe7\x83\x9f\xef\xbc\x8c\xe4\xbd\xbf\xef\xbc\x8c\xe6\xb3\xa2\xef\xbc\x8c\xe4\xba\xba\xef\xbc\x8c\xe4\xb8\x8a \xef\xbc\x8c\xe6\x9c\xaa\xef\xbc\x8c\xe6\xb1\x9f\xef\xbc\x8c\xe6\x98\xaf\xe2\x80\x9d"}'
+转码过后:请从以下十二个字中识别一句七言唐诗：“见，长，安，愁，烟，使，波，人，上 ，未，江，是”
+begin
+烟波江上使人愁
+1.5250310000000002
+处理完 得到的结果为：烟波江上使人愁
+queue1 keu : direct.pwl1收到消息:b'{"userName":"0001","question":"\xe8\xaf\xb7\xe4\xbb\x8e\xe4\xbb\xa5\xe4\xb8\x8b\xe5\x8d\x81\xe4\xba\x8c\xe4\xb8\xaa\xe5\xad\x97\xe4\xb8\xad\xe8\xaf\x86\xe5\x88\xab\xe4\xb8\x80\xe5\x8f\xa5\xe4\xb8\x83\xe8\xa8\x80\xe5\x94\x90\xe8\xaf\x97\xef\xbc\x9a\xe2\x80\x9c\xe8\xa7\x81\xef\xbc\x8c\xe9\x95\xbf\xef\xbc\x8c\xe5\xae\x89\xef\xbc\x8c\xe6\x84\x81\xef\xbc\x8c\xe7\x83\x9f\xef\xbc\x8c\xe4\xbd\xbf\xef\xbc\x8c\xe6\xb3\xa2\xef\xbc\x8c\xe4\xba\xba\xef\xbc\x8c\xe4\xb8\x8a \xef\xbc\x8c\xe6\x9c\xaa\xef\xbc\x8c\xe6\xb1\x9f\xef\xbc\x8c\xe6\x98\xaf"}'
+转码过后:请从以下十二个字中识别一句七言唐诗：“见，长，安，愁，烟，使，波，人，上 ，未，江，是
+begin
+烟波江上使人愁
+1.5478869999999993
+处理完 得到的结果为：烟波江上使人愁
+queue1 keu : direct.pwl1收到消息:b'{"userName":"0001","question":""}'
+转码过后:
+处理完 得到的结果为：无法识别，请重新输入
+queue1 keu : direct.pwl1收到消息:b'{"userName":"0001","question":""}'
+转码过后:
+处理完 得到的结果为：无法识别，请重新输入
+queue1 keu : direct.pwl1收到消息:b'{"userName":"123","question":"\xe8\xaf\xb7\xe4\xbb\x8e\xe4\xbb\xa5\xe4\xb8\x8b\xe5\x8d\x81\xe4\xba\x8c\xe4\xb8\xaa\xe5\xad\x97\xe4\xb8\xad\xe8\xaf\x86\xe5\x88\xab\xe4\xb8\x80\xe5\x8f\xa5\xe4\xb8\x83\xe8\xa8\x80\xe5\x94\x90\xe8\xaf\x97\xef\xbc\x9a\xe2\x80\x9c\xe8\xa7\x81\xef\xbc\x8c\xe9\x95\xbf\xef\xbc\x8c\xe5\xae\x89\xef\xbc\x8c\xe6\x84\x81\xef\xbc\x8c\xe7\x83\x9f\xef\xbc\x8c\xe4\xbd\xbf\xef\xbc\x8c\xe6\xb3\xa2\xef\xbc\x8c\xe4\xba\xba\xef\xbc\x8c\xe4\xb8\x8a \xef\xbc\x8c\xe6\x9c\xaa\xef\xbc\x8c\xe6\xb1\x9f\xef\xbc\x8c\xe6\x98\xaf\xe2\x80\x9d"}'
+转码过后:请从以下十二个字中识别一句七言唐诗：“见，长，安，愁，烟，使，波，人，上 ，未，江，是”
+begin
+烟波江上使人愁
+1.5365920000000024
+处理完 得到的结果为：烟波江上使人愁
+queue1 keu : direct.pwl1收到消息:b'{"userName":"0001","question":""}'
+转码过后:
+处理完 得到的结果为：无法识别，请重新输入
+queue1 keu : direct.pwl1收到消息:b'{"userName":"0001","question":"\xe9\xaa\xa8\xe7\x81\xb0\xe7\x9b\x92\xe9\xa3\x8e\xe6\xa0\xbc"}'
+转码过后:骨灰盒风格
+处理完 得到的结果为：无法识别，请重新输入
+queue1 keu : direct.pwl1收到消息:b'{"userName":"0001","question":"\xe4\xbd\xa0\xe5\xa5\xbd"}'
+转码过后:你好
+处理完 得到的结果为：无法识别，请重新输入
+queue1 keu : direct.pwl1收到消息:b'{"userName":"123","question":"231"}'
+转码过后:231
+处理完 得到的结果为：无法识别，请重新输入
+queue1 keu : direct.pwl1收到消息:b'{"userName":"0001","question":"\xe4\xbd\xa0\xe5\xa5\xbd"}'
+转码过后:你好
+处理完 得到的结果为：无法识别，请重新输入
+queue1 keu : direct.pwl1收到消息:b'{"userName":"0001","question":"\xe5\x93\x88\xe5\x93\x88\xe9\x95\x9c"}'
+转码过后:哈哈镜
+处理完 得到的结果为：无法识别，请重新输入
+queue1 keu : direct.pwl1收到消息:b'{"userName":"0001","question":"\xe5\x93\x88\xe5\x93\x88\xe9\x95\x9c"}'
+转码过后:哈哈镜
+处理完 得到的结果为：无法识别，请重新输入
+queue1 keu : direct.pwl1收到消息:b'{"userName":"0001","question":"\xe8\xae\xa1\xe7\xae\x97\xe6\x9c\xba\xe4\xb8\x96\xe7\x95\x8c"}'
+转码过后:计算机世界
+处理完 得到的结果为：无法识别，请重新输入
+queue1 keu : direct.pwl1收到消息:b'{"userName":"0001","question":"\xe4\xb8\x8a\xe6\xb5\xb7\xe5\xb8\x82"}'
+转码过后:上海市
+处理完 得到的结果为：无法识别，请重新输入
+queue1 keu : direct.pwl1收到消息:b'{"userName":"0001","question":""}'
+转码过后:
+处理完 得到的结果为：无法识别，请重新输入
+queue1 keu : direct.pwl1收到消息:b'{"userName":"0001","question":""}'
+转码过后:
+处理完 得到的结果为：无法识别，请重新输入
+queue1 keu : direct.pwl1收到消息:b'{"userName":"0001","question":"\xe8\xaf\xb7\xe4\xbb\x8e\xe4\xbb\xa5\xe4\xb8\x8b\xe5\x8d\x81\xe4\xba\x8c\xe4\xb8\xaa\xe5\xad\x97\xe4\xb8\xad\xe8\xaf\x86\xe5\x88\xab\xe4\xb8\x80\xe5\x8f\xa5\xe4\xb8\x83\xe8\xa8\x80\xe5\x94\x90\xe8\xaf\x97\xef\xbc\x9a\xe2\x80\x9c\xe8\xa7\x81\xef\xbc\x8c\xe9\x95\xbf\xef\xbc\x8c\xe5\xae\x89\xef\xbc\x8c\xe6\x84\x81\xef\xbc\x8c\xe7\x83\x9f\xef\xbc\x8c\xe4\xbd\xbf\xef\xbc\x8c\xe6\xb3\xa2\xef\xbc\x8c\xe4\xba\xba\xef\xbc\x8c\xe4\xb8\x8a \xef\xbc\x8c\xe6\x9c\xaa\xef\xbc\x8c\xe6\xb1\x9f\xef\xbc\x8c\xe6\x98\xaf\xe2\x80\x9d"}'
+转码过后:请从以下十二个字中识别一句七言唐诗：“见，长，安，愁，烟，使，波，人，上 ，未，江，是”
+begin
+烟波江上使人愁
+1.5208429999999993
+处理完 得到的结果为：烟波江上使人愁
+queue1 keu : direct.pwl1收到消息:b'{"userName":"0001","question":"\xe8\xaf\xb7\xe4\xbb\x8e\xe4\xbb\xa5\xe4\xb8\x8b\xe5\x8d\x81\xe4\xba\x8c\xe4\xb8\xaa\xe5\xad\x97\xe4\xb8\xad\xe8\xaf\x86\xe5\x88\xab\xe4\xb8\x80\xe5\x8f\xa5\xe4\xb8\x83\xe8\xa8\x80\xe5\x94\x90\xe8\xaf\x97\xef\xbc\x9a\xe2\x80\x9c\xe8\xa7\x81\xef\xbc\x8c\xe9\x95\xbf\xef\xbc\x8c\xe5\xae\x89\xef\xbc\x8c\xe6\x84\x81\xef\xbc\x8c\xe7\x83\x9f\xef\xbc\x8c\xe4\xbd\xbf\xef\xbc\x8c\xe6\xb3\xa2\xef\xbc\x8c\xe4\xba\xba\xef\xbc\x8c\xe4\xb8\x8a \xef\xbc\x8c\xe6\x9c\xaa\xef\xbc\x8c\xe6\xb1\x9f\xef\xbc\x8c\xe6\x98\xaf\xe2\x80\x9d"}'
+转码过后:请从以下十二个字中识别一句七言唐诗：“见，长，安，愁，烟，使，波，人，上 ，未，江，是”
+begin
+烟波江上使人愁
+1.5389780000000002
+处理完 得到的结果为：烟波江上使人愁
+queue1 keu : direct.pwl1收到消息:b'{"userName":"0001","question":"\xe9\x95\xbf\xe6\xb1\x9f\xe4\xb9\x8b\xe6\xb0\xb4\xe5\xa4\xa9\xe4\xb8\x8a\xe6\x9d\xa5\xe7\x9a\x84\xe4\xb8\x8b\xe4\xb8\x80\xe5\x8f\xa5"}'
+转码过后:长江之水天上来的下一句
+处理完 得到的结果为：解析上一句或者下一句问题出现错误
+queue1 keu : direct.pwl1收到消息:b'{"userName":"0001","question":"\xe9\xbb\x84\xe6\xb2\xb3\xe5\x85\xa5\xe6\xb5\xb7\xe6\xb5\x81\xe7\x9a\x84\xe4\xb8\x8a\xe4\xb8\x80\xe5\x8f\xa5"}'
+转码过后:黄河入海流的上一句
+处理完 得到的结果为：解析上一句或者下一句问题出现错误
+queue1 keu : direct.pwl1收到消息:b'{"userName":"0001","question":"\xe2\x80\x9c\xe5\xbc\x80\xe5\x9b\xbd\xe4\xbd\x95\xe8\x8c\xab\xe7\x84\xb6\xe2\x80\x9d\xe7\x9a\x84\xe5\x89\x8d\xe4\xb8\x80\xe5\x8f\xa5\xe6\x98\xaf\xe4\xbb\x80\xe4\xb9\x88\xef\xbc\x9f"}'
+转码过后:“开国何茫然”的前一句是什么？
+处理完 得到的结果为：无法识别，请重新输入
+queue1 keu : direct.pwl1收到消息:b'{"userName":"0001","question":"\xe8\xaf\xb7\xe4\xbb\x8e\xe4\xbb\xa5\xe4\xb8\x8b\xe5\x8d\x81\xe4\xba\x8c\xe4\xb8\xaa\xe5\xad\x97\xe4\xb8\xad\xe8\xaf\x86\xe5\x88\xab\xe4\xb8\x80\xe5\x8f\xa5\xe4\xb8\x83\xe8\xa8\x80\xe5\x94\x90\xe8\xaf\x97\xef\xbc\x9a\xe2\x80\x9c\xe8\xa7\x81\xef\xbc\x8c\xe9\x95\xbf\xef\xbc\x8c\xe5\xae\x89\xef\xbc\x8c\xe6\x84\x81\xef\xbc\x8c\xe7\x83\x9f\xef\xbc\x8c\xe4\xbd\xbf\xef\xbc\x8c\xe6\xb3\xa2\xef\xbc\x8c\xe4\xba\xba\xef\xbc\x8c\xe4\xb8\x8a \xef\xbc\x8c\xe6\x9c\xaa\xef\xbc\x8c\xe6\xb1\x9f\xef\xbc\x8c\xe6\x98\xaf\xe2\x80\x9d"}'
+转码过后:请从以下十二个字中识别一句七言唐诗：“见，长，安，愁，烟，使，波，人，上 ，未，江，是”
+begin
+烟波江上使人愁
+1.548966
+处理完 得到的结果为：烟波江上使人愁
+queue1 keu : direct.pwl1收到消息:b'{"userName":"0001","question":""}'
+转码过后:
+处理完 得到的结果为：无法识别，请重新输入
+queue1 keu : direct.pwl1收到消息:b'{"userName":"0001","question":""}'
+转码过后:
+处理完 得到的结果为：无法识别，请重新输入
+queue1 keu : direct.pwl1收到消息:b'{"userName":"0001","question":"hhhhh"}'
+转码过后:hhhhh
+处理完 得到的结果为：无法识别，请重新输入
+queue1 keu : direct.pwl1收到消息:b'{"userName":"0001","question":"\xe9\x94\x84\xe7\xa6\xbe\xe6\x97\xa5\xe5\xbd\x93\xe5\x8d\x88"}'
+转码过后:锄禾日当午
+处理完 得到的结果为：无法识别，请重新输入
+queue1 keu : direct.pwl1收到消息:b'{"userName":"0001","question":"\xe9\x94\x84\xe7\xa6\xbe\xe6\x97\xa5\xe5\xbd\x93\xe5\x8d\x88\xe4\xb8\x8b\xe4\xb8\x80\xe5\x8f\xa5"}'
+转码过后:锄禾日当午下一句
+处理完 得到的结果为：解析上一句或者下一句问题出现错误
+queue1 keu : direct.pwl1收到消息:b'{"userName":"0001","question":""}'
+转码过后:
+处理完 得到的结果为：无法识别，请重新输入
+queue1 keu : direct.pwl1收到消息:b'{"userName":"0001","question":"\xe6\x9d\x8e\xe7\x99\xbd\xe7\x9a\x84\xe8\xaf\x97"}'
+转码过后:李白的诗
+处理完 得到的结果为：无法识别，请重新输入
+queue1 keu : direct.pwl1收到消息:b'{"userName":"0001","question":"\xe6\x9d\x8e\xe7\x99\xbd"}'
+转码过后:李白
+处理完 得到的结果为：无法识别，请重新输入
+queue1 keu : direct.pwl1收到消息:b'{"userName":"0001","question":"\xe3\x80\x8a\xe9\x9d\x99\xe5\xa4\x9c\xe6\x80\x9d\xe3\x80\x8b\xe7\x9a\x84\xe4\xbd\x9c\xe8\x80\x85"}'
+转码过后:《静夜思》的作者
+处理完 得到的结果为：无法识别，请重新输入
+queue1 keu : direct.pwl1收到消息:b'{"userName":"0001","question":""}'
+转码过后:
+处理完 得到的结果为：无法识别，请重新输入
+queue1 keu : direct.pwl1收到消息:b'{"userName":"0001","question":"\xe5\x93\x88\xe5\x93\x88\xe5\x93\x88\xe5\x93\x88\xe5\x93\x88"}'
+转码过后:哈哈哈哈哈
+处理完 得到的结果为：无法识别，请重新输入
+queue1 keu : direct.pwl1收到消息:b'{"userName":"0001","question":"\xe9\x94\x84\xe7\xa6\xbe\xe6\x97\xa5\xe5\xbd\x93\xe5\x8d\x88"}'
+转码过后:锄禾日当午
+处理完 得到的结果为：无法识别，请重新输入
+queue1 keu : direct.pwl1收到消息:b'{"userName":"0001","question":"\xe5\xba\x8a\xe5\x89\x8d\xe6\x98\x8e\xe6\x9c\x88\xe5\x85\x89"}'
+转码过后:床前明月光
+处理完 得到的结果为：无法识别，请重新输入
+queue1 keu : direct.pwl1收到消息:b'{"userName":"0001","question":"\xe4\xb8\x80\xe8\xa1\x8c\xe7\x99\xbd\xe9\xb9\xad\xe4\xb8\x8a\xe9\x9d\x92\xe5\xa4\xa9"}'
+转码过后:一行白鹭上青天
+处理完 得到的结果为：无法识别，请重新输入
+queue1 keu : direct.pwl1收到消息:b'{"userName":"0001","question":"\xe7\x99\xbd\xe6\x97\xa5\xe4\xbe\x9d\xe5\xb1\xb1\xe5\xb0\xbd\xe4\xb8\x8b\xe4\xb8\x80\xe5\x8f\xa5"}'
+转码过后:白日依山尽下一句
+处理完 得到的结果为：解析上一句或者下一句问题出现错误
+queue1 keu : direct.pwl1收到消息:b'{"userName":"0001","question":"\xe6\x9d\x8e\xe7\x99\xbd"}'
+转码过后:李白
+处理完 得到的结果为：无法识别，请重新输入
+queue1 keu : direct.pwl1收到消息:b'{"userName":"0001","question":"\xe6\x9c\x9d\xe8\xbe\x9e\xe7\x99\xbd\xe5\xb8\x9d\xe5\xbd\xa9\xe4\xba\x91\xe9\x97\xb4"}'
+转码过后:朝辞白帝彩云间
+处理完 得到的结果为：无法识别，请重新输入
+queue1 keu : direct.pwl1收到消息:b'{"userName":"0001","question":""}'
+转码过后:
+处理完 得到的结果为：无法识别，请重新输入
+queue1 keu : direct.pwl1收到消息:b'{"userName":"0001","question":"\xe6\x9d\x8e\xe7\x99\xbd\xe5\xb1\x9e\xe4\xba\x8e\xe5\x93\xaa\xe4\xb8\xaa\xe6\x9c\x9d\xe4\xbb\xa3"}'
+转码过后:李白属于哪个朝代
+处理完 得到的结果为：无法识别，请重新输入
+queue1 keu : direct.pwl1收到消息:b'{"userName":"0001","question":""}'
+转码过后:
+处理完 得到的结果为：无法识别，请重新输入
+queue1 keu : direct.pwl1收到消息:b'{"userName":"0001","question":"\xe9\x94\x84\xe7\xa6\xbe\xe6\x97\xa5\xe5\xbd\x93\xe5\x8d\x88"}'
+转码过后:锄禾日当午
+处理完 得到的结果为：无法识别，请重新输入
+queue1 keu : direct.pwl1收到消息:b'{"userName":"0001","question":"\xe7\x99\xbd\xe6\x97\xa5"}'
+转码过后:白日
+处理完 得到的结果为：无法识别，请重新输入
+queue1 keu : direct.pwl1收到消息:b'{"userName":"0001","question":"\xe6\x9d\x8e\xe7\x99\xbd"}'
+转码过后:李白
+处理完 得到的结果为：无法识别，请重新输入
+queue1 keu : direct.pwl1收到消息:b'{"userName":"0001","question":"\xe6\x9d\x8e\xe7\x99\xbd\xe6\x98\xaf\xe5\x93\xaa\xe4\xb8\xaa\xe6\x9c\x9d\xe4\xbb\xa3"}'
+转码过后:李白是哪个朝代
+处理完 得到的结果为：无法识别，请重新输入
+queue1 keu : direct.pwl1收到消息:b'{"userName":"0001","question":""}'
+转码过后:
+处理完 得到的结果为：无法识别，请重新输入
+queue1 keu : direct.pwl1收到消息:b'{"userName":"0001","question":"\xe5\xba\x8a\xe5\x89\x8d\xe6\x98\x8e\xe6\x9c\x88\xe5\x85\x89"}'
+转码过后:床前明月光
+处理完 得到的结果为：无法识别，请重新输入
+queue1 keu : direct.pwl1收到消息:b'{"userName":"0001","question":"\xe8\xaf\xb7\xe4\xbb\x8e\xe4\xbb\xa5\xe4\xb8\x8b\xe5\x8d\x81\xe4\xba\x8c\xe4\xb8\xaa\xe5\xad\x97\xe4\xb8\xad\xe8\xaf\x86\xe5\x88\xab\xe4\xb8\x80\xe5\x8f\xa5\xe4\xb8\x83\xe8\xa8\x80\xe5\x94\x90\xe8\xaf\x97\xef\xbc\x9a\xe2\x80\x9c\xe8\xa7\x81\xef\xbc\x8c\xe9\x95\xbf\xef\xbc\x8c\xe5\xae\x89\xef\xbc\x8c\xe6\x84\x81\xef\xbc\x8c\xe7\x83\x9f\xef\xbc\x8c\xe4\xbd\xbf\xef\xbc\x8c\xe6\xb3\xa2\xef\xbc\x8c\xe4\xba\xba\xef\xbc\x8c\xe4\xb8\x8a \xef\xbc\x8c\xe6\x9c\xaa\xef\xbc\x8c\xe6\xb1\x9f\xef\xbc\x8c\xe6\x98\xaf\xe2\x80\x9d"}'
+转码过后:请从以下十二个字中识别一句七言唐诗：“见，长，安，愁，烟，使，波，人，上 ，未，江，是”
+begin
+烟波江上使人愁
+1.5366599999999977
+处理完 得到的结果为：烟波江上使人愁
+Traceback (most recent call last):
+  File "/develop/python3/PoetryQA/PoetryQA/rabbit_controller.py", line 145, in <module>
+    channel.start_consuming()
+  File "/develop/python3/python3/QA/lib/python3.7/site-packages/pika/adapters/blocking_connection.py", line 1866, in start_consuming
+    self._process_data_events(time_limit=None)
+  File "/develop/python3/python3/QA/lib/python3.7/site-packages/pika/adapters/blocking_connection.py", line 2027, in _process_data_events
+    self.connection.process_data_events(time_limit=time_limit)
+  File "/develop/python3/python3/QA/lib/python3.7/site-packages/pika/adapters/blocking_connection.py", line 825, in process_data_events
+    self._flush_output(common_terminator)
+  File "/develop/python3/python3/QA/lib/python3.7/site-packages/pika/adapters/blocking_connection.py", line 522, in _flush_output
+    raise self._closed_result.value.error
+pika.exceptions.AMQPHeartbeatTimeout: No activity or too many missed heartbeats in the last 60 seconds
+/develop/python3/python3/QA/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:516: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint8 = np.dtype([("qint8", np.int8, 1)])
+/develop/python3/python3/QA/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:517: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint8 = np.dtype([("quint8", np.uint8, 1)])
+/develop/python3/python3/QA/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:518: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint16 = np.dtype([("qint16", np.int16, 1)])
+/develop/python3/python3/QA/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:519: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint16 = np.dtype([("quint16", np.uint16, 1)])
+/develop/python3/python3/QA/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:520: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint32 = np.dtype([("qint32", np.int32, 1)])
+/develop/python3/python3/QA/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:525: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  np_resource = np.dtype([("resource", np.ubyte, 1)])
+/develop/python3/python3/QA/lib/python3.7/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:541: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint8 = np.dtype([("qint8", np.int8, 1)])
+/develop/python3/python3/QA/lib/python3.7/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:542: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint8 = np.dtype([("quint8", np.uint8, 1)])
+/develop/python3/python3/QA/lib/python3.7/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:543: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint16 = np.dtype([("qint16", np.int16, 1)])
+/develop/python3/python3/QA/lib/python3.7/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:544: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint16 = np.dtype([("quint16", np.uint16, 1)])
+/develop/python3/python3/QA/lib/python3.7/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:545: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint32 = np.dtype([("qint32", np.int32, 1)])
+/develop/python3/python3/QA/lib/python3.7/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:550: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  np_resource = np.dtype([("resource", np.ubyte, 1)])
+Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+Loading model cost 0.645 seconds.
+Prefix dict has been built succesfully.
+{'指的是': 'Typemeaning', '说的是': 'Typemeaning', '是什么意思': 'Typemeaning', '是指': 'Typemeaning', '指什么': 'Typemeaning', '意思是': 'Typemeaning', '什么人': 'Typepername', '谁': 'Typepername', '哪个人': 'Typepername', '什么名': 'Typepername', '什么名字': 'Typepername', '哪一位': 'Typepername', '哪位名人': 'Typepername', '哪位': 'Typepername', '何人': 'Typepername', '哪位诗人': 'Typepername', '哪位历史人物': 'Typepername', '哪位将领': 'Typepername', '哪个地方': 'TypeLocation', '哪个名胜': 'TypeLocation', '什么地方': 'TypeLocation', '哪儿': 'TypeLocation', '哪的': 'TypeLocation', '哪里去': 'TypeLocation', '哪处名胜': 'TypeLocation', '哪个朝代': 'TypeDynasty', '什么朝代': 'TypeDynasty', '什么历史时期': 'TypeDynasty', '哪个历史时期': 'TypeDynasty', '什么体裁': 'TypeClass', '那种': 'TypeClass', '哪种': 'TypeClass', '什么类型': 'TypeClass', '哪种类型': 'TypeClass', '哪一种': 'TypeClass', '哪一句': 'TypeSentence', '那句': 'TypeSentence', '哪句': 'TypeSentence', '哪句诗': 'TypeSentence', '哪一句诗词': 'TypeSentence', '哪两句诗词': 'TypeSentence', '哪些诗词': 'TypeSentence', '名句': 'TypeSentence', '诗句是': 'TypeSentence', '哪联诗': 'TypeSentence', '什么诗句': 'TypeSentence', '什么句子': 'TypeSentence', '哪首诗': 'TypePoname', '那首诗': 'TypePoname', '哪首唐诗': 'TypePoname', '哪篇名著': 'TypePoname', '诗名是什么': 'TypePoname', '什么诗': 'TypePoname', '是什么名字': 'TypePoname', '什么内容': 'TypeContent', '讲的什么': 'TypeContent', '描绘了什么': 'TypeContent', '形容什么': 'TypeContent', '描述了什么': 'TypeContent', '说的是什么': 'TypeContent', '什么关系': 'TypeRelation', '什么': 'TypeAll', '啥': 'TypeAll'}
+queue1 keu : direct.pwl1收到消息:b'{"userName":"0001","question":"\xe8\xaf\xb7\xe4\xbb\x8e\xe4\xbb\xa5\xe4\xb8\x8b\xe5\x8d\x81\xe4\xba\x8c\xe4\xb8\xaa\xe5\xad\x97\xe4\xb8\xad\xe8\xaf\x86\xe5\x88\xab\xe4\xb8\x80\xe5\x8f\xa5\xe4\xb8\x83\xe8\xa8\x80\xe5\x94\x90\xe8\xaf\x97\xef\xbc\x9a\xe2\x80\x9c\xe8\xa7\x81\xef\xbc\x8c\xe9\x95\xbf\xef\xbc\x8c\xe5\xae\x89\xef\xbc\x8c\xe6\x84\x81\xef\xbc\x8c\xe7\x83\x9f\xef\xbc\x8c\xe4\xbd\xbf\xef\xbc\x8c\xe6\xb3\xa2\xef\xbc\x8c\xe4\xba\xba\xef\xbc\x8c\xe4\xb8\x8a \xef\xbc\x8c\xe6\x9c\xaa\xef\xbc\x8c\xe6\xb1\x9f\xef\xbc\x8c\xe6\x98\xaf\xe2\x80\x9d"}'
+转码过后:请从以下十二个字中识别一句七言唐诗：“见，长，安，愁，烟，使，波，人，上 ，未，江，是”
+begin
+烟波江上使人愁
+1.4778070000000003
+处理完 得到的结果为：烟波江上使人愁
+queue1 keu : direct.pwl1收到消息:b'{"userName":"0001","question":"\xe4\xbd\xa0\xe5\xa5\xbd"}'
+转码过后:你好
+处理完 得到的结果为：无法识别，请重新输入
+queue1 keu : direct.pwl1收到消息:b'{"userName":"0001","question":"\xe8\xaf\xb7\xe4\xbb\x8e\xe4\xbb\xa5\xe4\xb8\x8b\xe5\x8d\x81\xe4\xba\x8c\xe4\xb8\xaa\xe5\xad\x97\xe4\xb8\xad\xe8\xaf\x86\xe5\x88\xab\xe4\xb8\x80\xe5\x8f\xa5\xe4\xb8\x83\xe8\xa8\x80\xe5\x94\x90\xe8\xaf\x97\xef\xbc\x9a\xe2\x80\x9c\xe8\xa7\x81\xef\xbc\x8c\xe9\x95\xbf\xef\xbc\x8c\xe5\xae\x89\xef\xbc\x8c\xe6\x84\x81\xef\xbc\x8c\xe7\x83\x9f\xef\xbc\x8c\xe4\xbd\xbf\xef\xbc\x8c\xe6\xb3\xa2\xef\xbc\x8c\xe4\xba\xba\xef\xbc\x8c\xe4\xb8\x8a \xef\xbc\x8c\xe6\x9c\xaa\xef\xbc\x8c\xe6\xb1\x9f\xef\xbc\x8c\xe6\x98\xaf\xe2\x80\x9d"}'
+转码过后:请从以下十二个字中识别一句七言唐诗：“见，长，安，愁，烟，使，波，人，上 ，未，江，是”
+begin
+烟波江上使人愁
+1.5286910000000002
+处理完 得到的结果为：烟波江上使人愁
+queue1 keu : direct.pwl1收到消息:b'{"userName":"0001","question":"\xe8\xaf\xb7\xe4\xbb\x8e\xe4\xbb\xa5\xe4\xb8\x8b\xe5\x8d\x81\xe4\xba\x8c\xe4\xb8\xaa\xe5\xad\x97\xe4\xb8\xad\xe8\xaf\x86\xe5\x88\xab\xe4\xb8\x80\xe5\x8f\xa5\xe4\xb8\x83\xe8\xa8\x80\xe5\x94\x90\xe8\xaf\x97\xef\xbc\x9a\xe2\x80\x9c\xe8\xa7\x81\xef\xbc\x8c\xe9\x95\xbf\xef\xbc\x8c\xe5\xae\x89\xef\xbc\x8c\xe6\x84\x81\xef\xbc\x8c\xe7\x83\x9f\xef\xbc\x8c\xe4\xbd\xbf\xef\xbc\x8c\xe6\xb3\xa2\xef\xbc\x8c\xe4\xba\xba\xef\xbc\x8c\xe4\xb8\x8a \xef\xbc\x8c\xe6\x9c\xaa\xef\xbc\x8c\xe6\xb1\x9f\xef\xbc\x8c\xe6\x98\xaf\xe2\x80\x9d"}'
+转码过后:请从以下十二个字中识别一句七言唐诗：“见，长，安，愁，烟，使，波，人，上 ，未，江，是”
+begin
+烟波江上使人愁
+1.5193519999999996
+处理完 得到的结果为：烟波江上使人愁
+queue1 keu : direct.pwl1收到消息:b'{"userName":"0001","question":"\xe4\xbd\xa0\xe5\xa5\xbd"}'
+转码过后:你好
+处理完 得到的结果为：无法识别，请重新输入
+queue1 keu : direct.pwl1收到消息:b'{"userName":"0001","question":"\xe8\xaf\xb7\xe4\xbb\x8e\xe4\xbb\xa5\xe4\xb8\x8b\xe5\x8d\x81\xe4\xba\x8c\xe4\xb8\xaa\xe5\xad\x97\xe4\xb8\xad\xe8\xaf\x86\xe5\x88\xab\xe4\xb8\x80\xe5\x8f\xa5\xe4\xb8\x83\xe8\xa8\x80\xe5\x94\x90\xe8\xaf\x97\xef\xbc\x9a\xe2\x80\x9c\xe8\xa7\x81\xef\xbc\x8c\xe9\x95\xbf\xef\xbc\x8c\xe5\xae\x89\xef\xbc\x8c\xe6\x84\x81\xef\xbc\x8c\xe7\x83\x9f\xef\xbc\x8c\xe4\xbd\xbf\xef\xbc\x8c\xe6\xb3\xa2\xef\xbc\x8c\xe4\xba\xba\xef\xbc\x8c\xe4\xb8\x8a \xef\xbc\x8c\xe6\x9c\xaa\xef\xbc\x8c\xe6\xb1\x9f\xef\xbc\x8c\xe6\x98\xaf\xe2\x80\x9d"}'
+转码过后:请从以下十二个字中识别一句七言唐诗：“见，长，安，愁，烟，使，波，人，上 ，未，江，是”
+begin
+烟波江上使人愁
+1.5373070000000002
+处理完 得到的结果为：烟波江上使人愁
+queue1 keu : direct.pwl1收到消息:b'{"userName":"0001","question":"\xe8\xaf\xb7\xe4\xbb\x8e\xe4\xbb\xa5\xe4\xb8\x8b\xe5\x8d\x81\xe4\xba\x8c\xe4\xb8\xaa\xe5\xad\x97\xe4\xb8\xad\xe8\xaf\x86\xe5\x88\xab\xe4\xb8\x80\xe5\x8f\xa5\xe4\xb8\x83\xe8\xa8\x80\xe5\x94\x90\xe8\xaf\x97\xef\xbc\x9a\xe2\x80\x9c\xe8\xa7\x81\xef\xbc\x8c\xe9\x95\xbf\xef\xbc\x8c\xe5\xae\x89\xef\xbc\x8c\xe6\x84\x81\xef\xbc\x8c\xe7\x83\x9f\xef\xbc\x8c\xe4\xbd\xbf\xef\xbc\x8c\xe6\xb3\xa2\xef\xbc\x8c\xe4\xba\xba\xef\xbc\x8c\xe4\xb8\x8a \xef\xbc\x8c\xe6\x9c\xaa\xef\xbc\x8c\xe6\xb1\x9f\xef\xbc\x8c\xe6\x98\xaf\xe2\x80\x9d"}'
+转码过后:请从以下十二个字中识别一句七言唐诗：“见，长，安，愁，烟，使，波，人，上 ，未，江，是”
+begin
+烟波江上使人愁
+1.6525789999999976
+处理完 得到的结果为：烟波江上使人愁
+queue1 keu : direct.pwl1收到消息:b'{"userName":"0001","question":"\xe4\xbd\xa0\xe5\xa5\xbd"}'
+转码过后:你好
+处理完 得到的结果为：无法识别，请重新输入
+queue1 keu : direct.pwl1收到消息:b'{"userName":"0001","question":"\xe4\xbd\xa0\xe5\xa5\xbd"}'
+转码过后:你好
+处理完 得到的结果为：无法识别，请重新输入
+queue1 keu : direct.pwl1收到消息:b'{"userName":"0001","question":"\xe8\xaf\xb7\xe4\xbb\x8e\xe4\xbb\xa5\xe4\xb8\x8b\xe5\x8d\x81\xe4\xba\x8c\xe4\xb8\xaa\xe5\xad\x97\xe4\xb8\xad\xe8\xaf\x86\xe5\x88\xab\xe4\xb8\x80\xe5\x8f\xa5\xe4\xb8\x83\xe8\xa8\x80\xe5\x94\x90\xe8\xaf\x97\xef\xbc\x9a\xe2\x80\x9c\xe8\xa7\x81\xef\xbc\x8c\xe9\x95\xbf\xef\xbc\x8c\xe5\xae\x89\xef\xbc\x8c\xe6\x84\x81\xef\xbc\x8c\xe7\x83\x9f\xef\xbc\x8c\xe4\xbd\xbf\xef\xbc\x8c\xe6\xb3\xa2\xef\xbc\x8c\xe4\xba\xba\xef\xbc\x8c\xe4\xb8\x8a \xef\xbc\x8c\xe6\x9c\xaa\xef\xbc\x8c\xe6\xb1\x9f\xef\xbc\x8c\xe6\x98\xaf\xe2\x80\x9d"}'
+转码过后:请从以下十二个字中识别一句七言唐诗：“见，长，安，愁，烟，使，波，人，上 ，未，江，是”
+begin
+烟波江上使人愁
+1.5245200000000025
+处理完 得到的结果为：烟波江上使人愁
+queue1 keu : direct.pwl1收到消息:b'{"userName":"0001","question":"\xe4\xbd\xa0\xe5\xa5\xbd\xe5\x95\x8a\xe5\x8f\x91\xe7\x9a\x84\xe5\xad\xa3\xe8\x8a\x82"}'
+转码过后:你好啊发的季节
+处理完 得到的结果为：无法识别，请重新输入
+queue1 keu : direct.pwl1收到消息:b'{"userName":"0001","question":"\xe4\xbd\xa0\xe5\xa5\xbd\xe5\x95\x8a\xe5\x8f\x91\xe7\x9a\x84\xe5\xad\xa3\xe8\x8a\x82"}'
+转码过后:你好啊发的季节
+处理完 得到的结果为：无法识别，请重新输入
+queue1 keu : direct.pwl1收到消息:b'{"userName":"0001","question":"\xe8\xaf\xb7\xe4\xbb\x8e\xe4\xbb\xa5\xe4\xb8\x8b\xe5\x8d\x81\xe4\xba\x8c\xe4\xb8\xaa\xe5\xad\x97\xe4\xb8\xad\xe8\xaf\x86\xe5\x88\xab\xe4\xb8\x80\xe5\x8f\xa5\xe4\xb8\x83\xe8\xa8\x80\xe5\x94\x90\xe8\xaf\x97\xef\xbc\x9a\xe2\x80\x9c\xe8\xa7\x81\xef\xbc\x8c\xe9\x95\xbf\xef\xbc\x8c\xe5\xae\x89\xef\xbc\x8c\xe6\x84\x81\xef\xbc\x8c\xe7\x83\x9f\xef\xbc\x8c\xe4\xbd\xbf\xef\xbc\x8c\xe6\xb3\xa2\xef\xbc\x8c\xe4\xba\xba\xef\xbc\x8c\xe4\xb8\x8a \xef\xbc\x8c\xe6\x9c\xaa\xef\xbc\x8c\xe6\xb1\x9f\xef\xbc\x8c\xe6\x98\xaf\xe2\x80\x9d"}'WARNING:tensorflow:From /develop/python3/PoetryQA/PoetryQA/nermain.py:217: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+WARNING:tensorflow:From /develop/python3/PoetryQA/PoetryQA/nermain.py:221: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
+
+2019-10-20 13:08:52.304629: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2019-10-20 13:08:52.319935: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2459325000 Hz
+2019-10-20 13:08:52.324640: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x1111de80 executing computations on platform Host. Devices:
+2019-10-20 13:08:52.324697: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): <undefined>, <undefined>
+WARNING:tensorflow:From /develop/python3/PoetryQA/PoetryQA/model.py:33: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+WARNING:tensorflow:From /develop/python3/PoetryQA/PoetryQA/model.py:96: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+
+WARNING:tensorflow:From /develop/python3/PoetryQA/PoetryQA/model.py:97: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+
+WARNING:tensorflow:From /develop/python3/PoetryQA/PoetryQA/model.py:57: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+WARNING:tensorflow:From /develop/python3/PoetryQA/PoetryQA/model.py:131: bidirectional_dynamic_rnn (from tensorflow.python.ops.rnn) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `keras.layers.Bidirectional(keras.layers.RNN(cell))`, which is equivalent to this API
+WARNING:tensorflow:From /develop/python3/python3/QA/lib/python3.7/site-packages/tensorflow/python/ops/rnn.py:464: dynamic_rnn (from tensorflow.python.ops.rnn) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `keras.layers.RNN(cell)`, which is equivalent to this API
+WARNING:tensorflow:Entity <bound method CoupledInputForgetGateLSTMCell.call of <rnncell.CoupledInputForgetGateLSTMCell object at 0x7fd598f43710>> could not be transformed and will be executed as-is. Please report this to the AutgoGraph team. When filing the bug, set the verbosity to 10 (on Linux, `export AUTOGRAPH_VERBOSITY=10`) and attach the full output. Cause: converting <bound method CoupledInputForgetGateLSTMCell.call of <rnncell.CoupledInputForgetGateLSTMCell object at 0x7fd598f43710>>: AttributeError: module 'gast' has no attribute 'Num'
+WARNING:tensorflow:From /develop/python3/python3/QA/lib/python3.7/site-packages/tensorflow/python/ops/init_ops.py:1251: calling VarianceScaling.__init__ (from tensorflow.python.ops.init_ops) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Call initializer instance with the dtype argument instead of passing it to the constructor
+WARNING:tensorflow:From /develop/python3/python3/QA/lib/python3.7/site-packages/tensorflow/python/ops/rnn.py:244: add_dispatch_support.<locals>.wrapper (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+WARNING:tensorflow:Entity <bound method CoupledInputForgetGateLSTMCell.call of <rnncell.CoupledInputForgetGateLSTMCell object at 0x7fd598f43450>> could not be transformed and will be executed as-is. Please report this to the AutgoGraph team. When filing the bug, set the verbosity to 10 (on Linux, `export AUTOGRAPH_VERBOSITY=10`) and attach the full output. Cause: converting <bound method CoupledInputForgetGateLSTMCell.call of <rnncell.CoupledInputForgetGateLSTMCell object at 0x7fd598f43450>>: AttributeError: module 'gast' has no attribute 'Num'
+WARNING:tensorflow:From /develop/python3/PoetryQA/PoetryQA/model.py:148: The name tf.nn.xw_plus_b is deprecated. Please use tf.compat.v1.nn.xw_plus_b instead.
+
+WARNING:tensorflow:From /develop/python3/PoetryQA/PoetryQA/model.py:73: The name tf.train.AdamOptimizer is deprecated. Please use tf.compat.v1.train.AdamOptimizer instead.
+
+WARNING:tensorflow:From /develop/python3/PoetryQA/PoetryQA/model.py:86: The name tf.train.Saver is deprecated. Please use tf.compat.v1.train.Saver instead.
+
+WARNING:tensorflow:From /develop/python3/PoetryQA/PoetryQA/utils.py:175: checkpoint_exists (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to check for files with this prefix.
+2019-10-20 13:08:55,406 - train.log - INFO - Reading model parameters from ckpt/ner.ckpt
+2019-10-20 13:08:55.636251: W tensorflow/compiler/jit/mark_for_compilation_pass.cc:1412] (One-time warning): Not using XLA:CPU for cluster because envvar TF_XLA_FLAGS=--tf_xla_cpu_global_jit was not set.  If you want XLA:CPU, either set that envvar, or use experimental_jit_scope to enable XLA:CPU.  To confirm that XLA is active, pass --vmodule=xla_compilation_cache=1 (as a proper command-line flag, not via TF_XLA_FLAGS) or set the envvar XLA_FLAGS=--xla_hlo_profile.
+
+转码过后:请从以下十二个字中识别一句七言唐诗：“见，长，安，愁，烟，使，波，人，上 ，未，江，是”
+begin
+烟波江上使人愁
+1.5210270000000001
+处理完 得到的结果为：烟波江上使人愁
+queue1 keu : direct.pwl1收到消息:b'{"userName":"0001","question":"\xe8\xaf\xb7\xe4\xbb\x8e\xe4\xbb\xa5\xe4\xb8\x8b\xe5\x8d\x81\xe4\xba\x8c\xe4\xb8\xaa\xe5\xad\x97\xe4\xb8\xad\xe8\xaf\x86\xe5\x88\xab\xe4\xb8\x80\xe5\x8f\xa5\xe4\xb8\x83\xe8\xa8\x80\xe5\x94\x90\xe8\xaf\x97\xef\xbc\x9a\xe2\x80\x9c\xe8\xa7\x81\xef\xbc\x8c\xe9\x95\xbf\xef\xbc\x8c\xe5\xae\x89\xef\xbc\x8c\xe6\x84\x81\xef\xbc\x8c\xe7\x83\x9f\xef\xbc\x8c\xe4\xbd\xbf\xef\xbc\x8c\xe6\xb3\xa2\xef\xbc\x8c\xe4\xba\xba\xef\xbc\x8c\xe4\xb8\x8a \xef\xbc\x8c\xe6\x9c\xaa\xef\xbc\x8c\xe6\xb1\x9f\xef\xbc\x8c\xe6\x98\xaf\xe2\x80\x9d"}'
+转码过后:请从以下十二个字中识别一句七言唐诗：“见，长，安，愁，烟，使，波，人，上 ，未，江，是”
+begin
+烟波江上使人愁
+1.5274469999999987
+处理完 得到的结果为：烟波江上使人愁
+queue1 keu : direct.pwl1收到消息:b'{"userName":"0001","question":"\xe8\xaf\xb7\xe4\xbb\x8e\xe4\xbb\xa5\xe4\xb8\x8b\xe5\x8d\x81\xe4\xba\x8c\xe4\xb8\xaa\xe5\xad\x97\xe4\xb8\xad\xe8\xaf\x86\xe5\x88\xab\xe4\xb8\x80\xe5\x8f\xa5\xe4\xb8\x83\xe8\xa8\x80\xe5\x94\x90\xe8\xaf\x97\xef\xbc\x9a\xe2\x80\x9c\xe8\xa7\x81\xef\xbc\x8c\xe9\x95\xbf\xef\xbc\x8c\xe5\xae\x89\xef\xbc\x8c\xe6\x84\x81\xef\xbc\x8c\xe7\x83\x9f\xef\xbc\x8c\xe4\xbd\xbf\xef\xbc\x8c\xe6\xb3\xa2\xef\xbc\x8c\xe4\xba\xba\xef\xbc\x8c\xe4\xb8\x8a \xef\xbc\x8c\xe6\x9c\xaa\xef\xbc\x8c\xe6\xb1\x9f\xef\xbc\x8c\xe6\x98\xaf\xe2\x80\x9d"}'
+转码过后:请从以下十二个字中识别一句七言唐诗：“见，长，安，愁，烟，使，波，人，上 ，未，江，是”
+begin
+烟波江上使人愁
+1.524792999999999
+处理完 得到的结果为：烟波江上使人愁
+queue1 keu : direct.pwl1收到消息:b'{"userName":"0001","question":"\xe4\xbd\xa0\xe5\xa5\xbd"}'
+转码过后:你好
+处理完 得到的结果为：无法识别，请重新输入
+queue1 keu : direct.pwl1收到消息:b'{"userName":"oFkEF5qXhRK2AWZDjqTAQi8cRg_I","question":"\\"\xe5\xba\x8a\xe5\x89\x8d\xe6\x98\x8e\xe6\x9c\x88\xe5\x85\x89\\"\xe7\x9a\x84\xe4\xb8\x8b\xe4\xb8\x80\xe5\x8f\xa5?"}'
+转码过后:"床前明月光"的下一句?
+['床前明月光'] ['VER']
+['"', '床前明月光', '"', '的', '下一句', '?']
+['null', 'VER', 'null', 'null', 'property', 'null']
+['wp', 'n', 'wp', 'u', 'n', 'wp']
+2:WP	5:ATT	2:WP	2:RAD	0:HED	5:WP
+[2, 5, 2, 2, 0, 5]
+['WP', 'ATT', 'WP', 'RAD', 'HED', 'WP']
+[{'headnode': '床前明月光', 'headnodetype': 'VER', 'relation': 'verseBeforeTo', 'endnode': '', 'endnodetype': 'VER', 'quesion': ''}]
+MATCH (m:Verse{verseContext:"床前明月光"})-[:verseBeforeTo]->(b:Verse) return b
+处理完 得到的结果为：解析上一句或者下一句问题出现错误
+Traceback (most recent call last):
+  File "/develop/python3/PoetryQA/PoetryQA/rabbit_controller.py", line 145, in <module>
+    channel.start_consuming()
+  File "/develop/python3/python3/QA/lib/python3.7/site-packages/pika/adapters/blocking_connection.py", line 1866, in start_consuming
+    self._process_data_events(time_limit=None)
+  File "/develop/python3/python3/QA/lib/python3.7/site-packages/pika/adapters/blocking_connection.py", line 2027, in _process_data_events
+    self.connection.process_data_events(time_limit=time_limit)
+  File "/develop/python3/python3/QA/lib/python3.7/site-packages/pika/adapters/blocking_connection.py", line 825, in process_data_events
+    self._flush_output(common_terminator)
+  File "/develop/python3/python3/QA/lib/python3.7/site-packages/pika/adapters/blocking_connection.py", line 522, in _flush_output
+    raise self._closed_result.value.error
+pika.exceptions.AMQPHeartbeatTimeout: No activity or too many missed heartbeats in the last 60 seconds
