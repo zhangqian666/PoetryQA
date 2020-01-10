@@ -7,7 +7,7 @@ from tensorflow.contrib.layers.python.layers import initializers
 
 import rnncell as rnn
 from utils import result_to_json
-from data_utils import create_input, iobes_iob
+from data_utils import iobes_iob
 
 
 class Model(object):
@@ -22,6 +22,8 @@ class Model(object):
         self.num_tags = config["num_tags"]
         self.num_chars = config["num_chars"]
         self.num_segs = 4
+        self.char_lookup = None
+        self.seg_lookup = None
 
         self.global_step = tf.Variable(0, trainable=False)
         self.best_dev_f1 = tf.Variable(0.0, trainable=False)
@@ -111,8 +113,8 @@ class Model(object):
 
     def biLSTM_layer(self, lstm_inputs, lstm_dim, lengths, name=None):
         """
-        :param lstm_inputs: [batch_size, num_steps, emb_size] 
-        :return: [batch_size, num_steps, 2*lstm_dim] 
+        :param lstm_inputs: [batch_size, num_steps, emb_size]
+        :return: [batch_size, num_steps, 2*lstm_dim]
         """
         with tf.variable_scope("char_BiLSTM" if not name else name):
             lstm_cell = {}
@@ -134,7 +136,7 @@ class Model(object):
     def project_layer(self, lstm_outputs, name=None):
         """
         hidden layer between lstm layer and logits
-        :param lstm_outputs: [batch_size, num_steps, emb_size] 
+        :param lstm_outputs: [batch_size, num_steps, emb_size]
         :return: [batch_size, num_steps, num_tags]
         """
         with tf.variable_scope("project" if not name else name):
@@ -191,7 +193,7 @@ class Model(object):
     def create_feed_dict(self, is_train, batch):
         """
         :param is_train: Flag, True for train batch
-        :param batch: list train/evaluate data 
+        :param batch: list train/evaluate data
         :return: structured data to feed
         """
         _, chars, segs, tags = batch
@@ -245,7 +247,7 @@ class Model(object):
 
     def evaluate(self, sess, data_manager, id_to_tag):
         """
-        :param sess: session  to run the model 
+        :param sess: session  to run the model
         :param data: list of data
         :param id_to_tag: index to tag name
         :return: evaluate result

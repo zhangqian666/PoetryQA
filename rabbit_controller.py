@@ -5,19 +5,14 @@ import os
 
 import pika
 
-from pyltp import Postagger, Parser
-
 from nermain import NER
+from nermain import build_model
 from sentence2logistcal import answerrecognition
 from sentence2logistcal import answersemantic
-from readDict import readPropertyWord
-from readDict import readQuestionWord
-from py2neo import Graph, Node, Relationship, NodeMatcher  # 读取数据库中内容
-from demo import test, lookfordict, VER
+from demo import VER
 from logistical2neo4j import semantic2neo4j
 from mixstringforverse import frommixwordfindverse
 from readDict import readallverse
-from const.controller import LTP_DATA_DIR
 
 direct_exchange = "direct.exchange"
 direct_queue1 = "direct.queue1"
@@ -25,23 +20,7 @@ direct_queue2 = "direct.queue2"
 direct_routing_key1 = "direct.pwl1"
 direct_routing_key2 = "direct.pwl2"
 
-verseset = readallverse()
-pos_model_path = os.path.join(LTP_DATA_DIR, 'pos.model')
-postagger = Postagger()  # 初始化实例
-postagger.load(pos_model_path)  # 加载模型
-par_model_path = os.path.join(LTP_DATA_DIR, 'parser.model')
-parser = Parser()  # 初始化实例
-parser.load(par_model_path)  # 加载模型
-test_graph = Graph("http://connect-ai.cn:7474", username="neo4j", password="123456")
-resultwordlist = []
-resultposlist = []
-propertywordlist = []
-questionwordlist = []
-
-potlist = []
-propertylist, propertydict = readPropertyWord()
-questionlist, questiondict = readQuestionWord()
-print(questiondict)
+model = None
 
 
 def question_one(sentence):
@@ -72,10 +51,10 @@ def question_two(sentence):
 
 def question_three(sentence):
     entitylist, poslist, indexset = NER(sentence)  # 命名实体识别
+
     print(entitylist, poslist)
     resultwordlist, resultposlist = answerrecognition(sentence, entitylist, poslist, indexset)
-    print(resultwordlist)
-    print(resultposlist)
+    print(resultwordlist, resultposlist)
     poedictlist = answersemantic(resultwordlist, resultposlist)
     poedictlist = semantic2neo4j(poedictlist)
     answerentity = poedictlist[0]['endnode'][0]
@@ -132,6 +111,8 @@ def send_answer(answer):
 if __name__ == "__main__":
     connection = pika.BlockingConnection(pika.ConnectionParameters("connect-ai.cn", 5672))
     channel = connection.channel()
+
+    model = build_model()
 
     channel.exchange_declare(exchange=direct_exchange,
                              exchange_type='direct',
