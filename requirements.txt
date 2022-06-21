@@ -1,6 +1,6 @@
 python_Levenshtein==0.12.0
 jieba==0.39
-numpy==1.17.2
+numpy==1.22.0
 py2neo==4.3.0
 pyltp==0.2.1
 pypinyin==0.35.4
