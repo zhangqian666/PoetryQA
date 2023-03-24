@@ -4,4 +4,4 @@ numpy==1.17.2
 py2neo==4.3.0
 pyltp==0.2.1
 pypinyin==0.35.4
-tensorflow==1.14.0
+tensorflow==2.11.1
